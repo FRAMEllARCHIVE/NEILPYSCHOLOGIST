@@ -36,6 +36,16 @@
             background: url('background1 3.jpg') no-repeat bottom center;
             background-size: cover;
             z-index: 1;
+            animation: zoomInOut 10s infinite alternate;
+        }
+
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
         }
 
         .logo {
@@ -125,14 +135,13 @@
             <button class="location">BLUFF</button>
             <button class="location">ONLINE</button>
             
-    <div class="icon-row">
-        <button class="icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></button>
-        <button class="icon" aria-label="Email"><i class="fas fa-envelope"></i></button>
-        <button class="icon" aria-label="Info"><i class="fas fa-info-circle"></i></button>
-    </div>
+            <div class="icon-row">
+                <button class="icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                <button class="icon" aria-label="Email"><i class="fas fa-envelope"></i></button>
+                <button class="icon" aria-label="Info"><i class="fas fa-info-circle"></i></button>
+            </div>
         </div>
     </div>
-
 
 </body>
 </html>
