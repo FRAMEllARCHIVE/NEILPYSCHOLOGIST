@@ -48,11 +48,17 @@
             }
         }
 
-        .logo {
-            width: 150px;
-            height: auto;
-            z-index: 3;
-        }
+.logo {
+    width: 150px;
+    height: 150px; /* Set the height to match the width for a perfect circle */
+    background-color: #C9E1E8; /* White background */
+    border-radius: 50%; /* Make the background circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    padding: 15px; /* Optional padding to create some space inside the circle */
+}
 
         .quote {
             font-size: 2vw;
