@@ -55,7 +55,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;  /* Ensure it's circular */
     z-index: 3;
+    overflow: hidden;  /* Hide anything that overflows */
+}
+
+.logo img {
+    width: 80%;  /* Scale down the logo size */
+    height: 80%;  /* Scale down the logo size */
+    object-fit: contain;  /* Ensures the logo fits within the circle without distortion */
 }
         .quote {
             font-size: 2vw;
