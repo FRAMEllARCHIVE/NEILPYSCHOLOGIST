@@ -23,16 +23,19 @@
             text-align: center;
             padding-top: 42px;
             gap: 20px;
+            position: relative; /* Important to keep the background image aligned */
         }
 
         .backgroundimage {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    background: url('background1 3.jpg') no-repeat bottom center;
-    background-size: cover;
-    z-index: 1;
-}
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background: url('background1 3.jpg') no-repeat bottom center;
+            background-size: cover;
+            z-index: 1; /* Ensure it's behind the content */
+        }
 
         .logo {
             width: 150px;
@@ -45,7 +48,7 @@
             justify-content: center;
             gap: 15px;
             width: 100%;
-            z-index: 2;
+            z-index: 2; /* Ensure the icons are above the background */
         }
 
         .icon {
@@ -76,7 +79,7 @@
             background: rgba(255, 255, 255, 0.2);
             padding: 20px;
             border-radius: 22px;
-            z-index: 2;
+            z-index: 2; /* Content above background image */
         }
 
         .bottom-buttons {
@@ -108,14 +111,20 @@
 </head>
 <body>
 
+    <!-- Background Image -->
+    <div class="backgroundimage"></div>
+
+    <!-- Logo -->
     <img src="logoneil.png" alt="Logo" class="logo">
 
+    <!-- Icons Row -->
     <div class="icon-row">
         <button class="icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></button>
         <button class="icon" aria-label="Email"><i class="fas fa-envelope"></i></button>
         <button class="icon" aria-label="Info"><i class="fas fa-info-circle"></i></button>
     </div>
 
+    <!-- Container with Location Buttons -->
     <div class="container">
         <div class="bottom-buttons">
             <button class="location">WESTVILLE</button>
