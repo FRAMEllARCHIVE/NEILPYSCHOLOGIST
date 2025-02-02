@@ -59,7 +59,11 @@
     z-index: 3;
     padding: 1px;
 }
-
+.logo img {
+    max-width: 90%; /* Ensure the logo image doesn't exceed the container's width */
+    max-height: 90%; /* Ensure the logo image doesn't exceed the container's height */
+    object-fit: contain; /* Maintain aspect ratio and prevent the image from being cut off */
+}
         .quote {
             font-size: 2vw;
             font-style: italic;
