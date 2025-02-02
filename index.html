@@ -15,19 +15,17 @@
         body {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: flex-start; /* Aligns content at the top */
             height: 100vh;
             background: url('background1.jpg') no-repeat center center/cover;
             font-family: Arial, sans-serif;
             text-align: center;
+            padding-top: 20px; /* Space from the top */
+            gap: 20px; /* Space between sections */
         }
 
         .logo {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
             width: 150px;
             height: auto;
         }
@@ -36,9 +34,7 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 20px;
             width: 100%;
-            margin-top: 100px;
         }
 
         .icon {
@@ -57,11 +53,8 @@
 
         .icon i {
             font-size: 28px;
+            color: #007BFF;
         }
-
-        .icon .fa-whatsapp { color: #007BFF; }
-        .icon .fa-envelope { color: #007BFF; }
-        .icon .fa-info-circle { color: #007BFF; }
 
         .container {
             display: flex;
@@ -72,7 +65,6 @@
             background: rgba(255, 255, 255, 0.2);
             padding: 20px;
             border-radius: 10px;
-            margin-top: 20px;
         }
 
         .bottom-buttons {
