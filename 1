@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLINICAL PSYCHOLOGY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            background-color: #C9E1E8;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 42px;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .backgroundimage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('background1 3.jpg') no-repeat bottom center;
+            background-size: cover;
+            z-index: 1;
+            animation: zoomInOut 22s infinite alternate;
+        }
+
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            z-index: 3;
+        }
+
+        .icon-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon i {
+            font-size: 28px;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            background: rgba(255, 255, 255, 0);
+            padding: 20px;
+            z-index: 2;
+            position: fixed;
+            bottom: 5%;
+            left: 0;
+        }
+
+        .bottom-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 222px;
+            justify-content: center;
+        }
+
+        .location {
+            flex: 1;
+            min-width: 120px;
+            padding: 15px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.6);
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 32px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .location:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="backgroundimage"></div>
+
+    <img src="logoneil.png" alt="Logo" class="logo">
+
+    <div class="container">
+        <div class="bottom-buttons">
+            <button class="location">BOOK</button>
+            
+            <div class="icon-row">
+                <button class="icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                <button class="icon" aria-label="Email"><i class="fas fa-envelope"></i></button>
+                <button class="icon" aria-label="Info"><i class="fas fa-info-circle"></i></button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
