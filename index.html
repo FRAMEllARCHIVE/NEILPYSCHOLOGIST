@@ -14,22 +14,12 @@
 
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background: url('background1.jpg') no-repeat center center/cover;
             font-family: Arial, sans-serif;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 90%;
-            max-width: 500px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 10px;
             text-align: center;
         }
 
@@ -43,26 +33,34 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             width: 100%;
         }
 
         .icon {
-            flex: 1;
-            width: 33px;
-            height: 33px;
-            padding: 10px;
+            width: 45px;
+            height: 45px;
             border: none;
             background-color: #007BFF;
             color: white;
             cursor: pointer;
             border-radius: 50%;
             text-align: center;
-            font-size: 16px;
+            font-size: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
         }
 
         .bottom-buttons {
@@ -88,22 +86,22 @@
     </style>
 </head>
 <body>
-    
-        <img src="logoneil.png" alt="Logo" class="logo">
-    
-        <div class="icon-row">
-            <button class="icon"><i class="fab fa-whatsapp"></i></button>
-            <button class="icon"><i class="fas fa-envelope"></i></button>
-            <button class="icon"><i class="fas fa-info-circle"></i></button>
-        </div>
-    
+
+    <img src="logoneil.png" alt="Logo" class="logo">
+
+    <div class="icon-row">
+        <button class="icon"><i class="fab fa-whatsapp"></i></button>
+        <button class="icon"><i class="fas fa-envelope"></i></button>
+        <button class="icon"><i class="fas fa-info-circle"></i></button>
+    </div>
+
     <div class="container">
-
-
         <div class="bottom-buttons">
-            <button class="location">Westville</button>
-            <button class="location">Bluff</button>
+            <button class="location">WESTVILLE</button>
+            <button class="location">BLUFF</button>
+            <button class="location">ONLINE</button>
         </div>
     </div>
+
 </body>
 </html>
