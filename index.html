@@ -24,9 +24,12 @@
         }
 
         .logo {
+            position: absolute;
+            top: 20px; /* Adjust this value as needed */
+            left: 50%;
+            transform: translateX(-50%);
             width: 150px;
             height: auto;
-            margin-bottom: 20px;
         }
 
         .icon-row {
@@ -35,31 +38,30 @@
             gap: 15px;
             margin-bottom: 20px;
             width: 100%;
+            margin-top: 100px; /* Space below the logo */
         }
 
         .icon {
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             border: none;
-            background-color: white;
+            background: transparent;
             cursor: pointer;
             border-radius: 50%;
             text-align: center;
-            font-size: 20px;
+            font-size: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
-        .fab fa-whatsapp {
-            color: green;
+
+        .icon i {
+            font-size: 28px;
         }
-        .fas fa-envelope {
-            color: blue;
-        }
-        .fas fa-info-circle {
-            color: black;
-        }
+
+        .icon .fa-whatsapp { color: #25D366; } /* Green for WhatsApp */
+        .icon .fa-envelope { color: #007BFF; } /* Blue for Email */
+        .icon .fa-info-circle { color: #000; } /* Black for Info */
 
         .container {
             display: flex;
@@ -70,6 +72,7 @@
             background: rgba(255, 255, 255, 0.2);
             padding: 20px;
             border-radius: 10px;
+            margin-top: 20px;
         }
 
         .bottom-buttons {
@@ -91,6 +94,11 @@
             cursor: pointer;
             border-radius: 5px;
             text-align: center;
+            transition: background 0.3s;
+        }
+
+        .location:hover {
+            background-color: #218838;
         }
     </style>
 </head>
