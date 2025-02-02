@@ -49,25 +49,34 @@
         }
 
         .logo {
-    width: 22vh;
-    height: 22vh;
-    background-color: rgba(201, 225, 232, 0.6);
-    background-image: url('logoneil.png');
-    background-size: 55%;
-    background-repeat: no-repeat;
-    background-position: center 60%;
-    border-radius: 50%;
-    z-index: 3;
-}
+            width: 22vh;
+            height: 22vh;
+            background-color: rgba(201, 225, 232, 0.6);
+            background-image: url('logoneil.png');
+            background-size: 55%;
+            background-repeat: no-repeat;
+            background-position: center 60%;
+            border-radius: 50%;
+            z-index: 3;
+        }
 
-@media (min-width: 1024px) and (max-height: 1024px) {
-    .logo {
-        display: none;
-    }
-}
-        
-        .quote { 
-            font-size: clamp(0.6rem, 2vw, 1.4rem); 
+        @media (min-width: 1024px) and (max-height: 1024px) {
+            .logo {
+                display: none;
+            }
+        }
+
+        /* New Section for Clinical Psychology Title */
+        .title {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            z-index: 2;
+        }
+
+        .quote {
+            font-size: clamp(0.6rem, 2vw, 1.4rem);
             font-style: italic;
             color: black;
             margin-top: 20px;
@@ -75,9 +84,9 @@
             padding: 0 20px;
         }
 
-         .quote span {
+        .quote span {
             display: block;
-             font-size: clamp(0.6rem, 1.2vw, 0.9rem); 
+            font-size: clamp(0.6rem, 1.2vw, 0.9rem);
             color: #555;
             margin-top: 10px;
             text-align: right;
@@ -109,7 +118,7 @@
         .icon i {
             font-size: 28px;
             color: white;
-             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .container {
@@ -147,7 +156,7 @@
             text-align: center;
             transition: background 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-              letter-spacing: 2px;
+            letter-spacing: 2px;
         }
 
         .ClinicalPsychologist:hover {
@@ -161,7 +170,10 @@
     <div class="backgroundimage"></div>
 
     <div class="logo"></div>
-  <div class="ClinicalPsychologist">Clinical Psychology</div>
+
+    <!-- Clinical Psychology Title Added -->
+    <div class="title">Clinical Psychology</div>
+
     <div class="quote">
         "We have more possibilities available in each moment than we realize."
         <span> - Thich Nhat Hanh, Zen Philosopher</span>
@@ -169,7 +181,6 @@
 
     <div class="container">
         <div class="bottom-buttons">
-            
             <div class="icon-row">
                 <button class="icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></button>
                 <button class="icon" aria-label="Email"><i class="fas fa-envelope"></i></button>
