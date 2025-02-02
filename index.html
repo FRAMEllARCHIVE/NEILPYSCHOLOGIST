@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLINICAL PSYCHOLOGY</title>
+    <title>Flex Layout Website</title>
+    <!-- Import Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-      
         * {
             margin: 0;
             padding: 0;
@@ -30,6 +31,7 @@
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
+            text-align: center;
         }
 
         .logo {
@@ -56,6 +58,11 @@
             cursor: pointer;
             border-radius: 5px;
             text-align: center;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         .bottom-buttons {
@@ -85,9 +92,9 @@
         <img src="logoneil.png" alt="Logo" class="logo">
 
         <div class="icon-row">
-            <button class="icon">WhatsApp</button>
-            <button class="icon">Contact</button>
-            <button class="icon">Info</button>
+            <button class="icon"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+            <button class="icon"><i class="fas fa-envelope"></i> Contact</button>
+            <button class="icon"><i class="fas fa-info-circle"></i> Info</button>
         </div>
 
         <div class="bottom-buttons">
