@@ -222,11 +222,8 @@
 
 </body>
 
-    
     <script>
-        
 document.addEventListener("DOMContentLoaded", function () {
-    
     let audio = document.createElement("audio");
     audio.src = "lakeside2.mp3";
     audio.loop = true;
@@ -246,10 +243,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener('click', function() {
-        audio.muted = false;
         audio.play();
         fadeInAudio();
     });
+
+    setTimeout(function() {
+        audio.muted = false;
+    }, 3000);  // Unmute after 3 seconds
 
     audio.addEventListener("timeupdate", function () {
         if (audio.currentTime >= 29) {
