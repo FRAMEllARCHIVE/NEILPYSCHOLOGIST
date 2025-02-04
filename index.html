@@ -223,36 +223,31 @@
 
 </body>
 
-    <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
     let audio = new Audio("lakeside2.mp3");
-    audio.currentTime = 0;
-    audio.loop = true;
+    audio.currentTime = 0; // Start from the beginning
+    audio.loop = true; // Loop the audio
+    audio.muted = true; // Start with muted audio
 
+    // Play the audio immediately after page load
     audio.play().catch(() => {
-        document.body.addEventListener("click", function () {
-            audio.play();
-        });
-
-        setTimeout(() => {
-            audio.play();
-        }, 2000);
+        console.log('Autoplay failed, this could be due to browser restrictions.');
     });
 
-    audio.volume = 0;
-    let fadeInInterval = setInterval(function () {
-        if (audio.volume < 1) {
-            audio.volume += 0.1;
-        } else {
-            clearInterval(fadeInInterval);
-        }
-    }, 100);
-
-    audio.addEventListener('timeupdate', function () {
-        if (audio.currentTime >= 27) {
-            audio.currentTime = 0;
-        }
-    });
+    // Fade in the volume after 100ms
+    setTimeout(() => {
+        audio.muted = false; // Unmute the audio
+        let fadeInInterval = setInterval(function () {
+            if (audio.volume < 1) {
+                audio.volume += 0.1; // Increase volume by 0.1 every 100ms
+            } else {
+                clearInterval(fadeInInterval); // Stop when the volume reaches 1
+            }
+        }, 100);
+    }, 100); // Delay unmute by 100ms after play
 });
 </script>
+
+    
 </html>
