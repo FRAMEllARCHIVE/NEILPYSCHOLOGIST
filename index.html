@@ -222,7 +222,7 @@
 
 </body>
 
-    <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
     let audio = document.createElement("audio");
     audio.src = "lakeside2.mp3";
@@ -231,6 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     audio.volume = 0;
     audio.muted = true;
+    audio.play();
     
     function fadeInAudio() {
         let fadeInterval = setInterval(function () {
@@ -242,14 +243,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 300);
     }
 
-    window.addEventListener('click', function() {
-        audio.play();
-        fadeInAudio();
-    });
-
     setTimeout(function() {
         audio.muted = false;
-    }, 3000);  // Unmute after 3 seconds
+        fadeInAudio();
+    }, 2000);
 
     audio.addEventListener("timeupdate", function () {
         if (audio.currentTime >= 29) {
