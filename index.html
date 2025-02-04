@@ -223,46 +223,5 @@
     </div>
 
 </body>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    let audio = new Audio("lakeside2.mp3");
-    audio.currentTime = 0; // Start from the beginning
-    audio.loop = true; // Loop the audio (but will only loop the first 27 seconds in our function)
-
-    // Function to play audio with fade-in effect
-    function playAudioWithFadeIn() {
-        audio.muted = true;  // Mute the audio initially to bypass autoplay restrictions
-        audio.play().catch(() => {
-            console.log('Autoplay failed, this could be due to browser restrictions.');
-        });
-
-        // Unmute the audio after 2 seconds (allows autoplay to work)
-        setTimeout(() => {
-            audio.muted = false;  // Unmute the audio
-            // Fade-in effect over 3 seconds
-            audio.volume = 0; // Start with volume at 0
-            let fadeInInterval = setInterval(function () {
-                if (audio.volume < 1) {
-                    audio.volume += 0.1; // Increase volume by 0.1 every 100ms
-                } else {
-                    clearInterval(fadeInInterval); // Stop when the volume reaches 1
-                }
-            }, 100);
-        }, 2000); // Wait 2 seconds before unmuting the audio
-
-        // Loop only the first 27 seconds
-        audio.addEventListener('timeupdate', function () {
-            if (audio.currentTime >= 27) {
-                audio.currentTime = 0; // Reset to the beginning after 27 seconds
-            }
-        });
-    }
-
-    // Call the function after 2 seconds
-    setTimeout(function() {
-        playAudioWithFadeIn(); // Call the function to play the audio with fade-in
-    }, 2000); // 2-second delay
-});
-</script>
     
 </html>
