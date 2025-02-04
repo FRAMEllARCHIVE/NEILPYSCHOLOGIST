@@ -221,9 +221,7 @@
     </div>
 
 </body>
-
-
-    <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
     let audio = document.createElement("audio");
     audio.src = "lakeside2.mp3";
@@ -233,21 +231,23 @@ document.addEventListener("DOMContentLoaded", function () {
     audio.volume = 0;
     audio.muted = true;
 
+    // Play the audio immediately while muted
     audio.play().then(() => {
-        setTimeout(function() {
-            audio.muted = false;
-            let fadeInterval = setInterval(function () {
+        setTimeout(() => {
+            audio.muted = false;  // Unmute after 2 seconds
+            let fadeInterval = setInterval(() => {
                 if (audio.volume < 1) {
                     audio.volume = Math.min(audio.volume + 0.05, 1);
                 } else {
                     clearInterval(fadeInterval);
                 }
             }, 300);
-        }, 2000);
+        }, 2000);  // Delay unmute by 2 seconds
     }).catch((error) => {
         console.error('Audio playback failed:', error);
     });
 
+    // Restart the audio after 29 seconds
     audio.addEventListener("timeupdate", function () {
         if (audio.currentTime >= 29) {
             audio.currentTime = 0;
