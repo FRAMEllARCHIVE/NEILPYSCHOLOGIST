@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
     <title>CLINICAL PSYCHOLOGY</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -31,15 +32,22 @@
             overflow: hidden;
         }
 
-        .backgroundimage {
-            position: absolute;
+        /* Background Container to keep the layout stable */
+        .backgroundimage-container {
+            position: fixed;
             top: 0;
             left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Background Image with independent animation */
+        .backgroundimage {
             width: 100%;
             height: 100%;
-            background: url('background1-3.webp') no-repeat bottom center;
-            background-size: cover;
-            z-index: 1;
+            object-fit: cover;
             animation: zoomInOut 22s infinite alternate;
             opacity: 1;
         }
@@ -56,7 +64,6 @@
         .logo {
             width: 33vh;
             height: 33vh;
-            background-color: rgba(201, 225, 232, 0);
             background-image: url('logoneil.png');
             background-size: 55%;
             background-repeat: no-repeat;
@@ -96,6 +103,33 @@
             margin-top: 8px;
             text-align: right;
             padding-right: 11px;
+        }
+
+        /* Book Here Button centered below the quote */
+        .book-here {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            color: white;
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            font-family: 'Montserrat', sans-serif;
+            animation: zoomInOut2 22s infinite alternate;
+        }
+
+        @keyframes zoomInOut2 {
+            0% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 1;
+            }
         }
 
         .icon-row {
@@ -167,38 +201,15 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             background-color: rgba(255, 255, 255, 0.9);
         }
-        
-.book-here {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-    color: white;
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    font-family: 'Montserrat', sans-serif;
-    animation: zoomInOut2 22s infinite alternate;
-}
-
-@keyframes zoomInOut2 {
-    0% {
-        transform: scale(1);
-        opacity: 0.9;
-    }
-    100% {
-        transform: scale(1.3);
-        opacity: 1;
-    }
-}
 
     </style>
 </head>
 <body>
     
-<div class="backgroundimage"></div>
+    <!-- Background Image Container -->
+    <div class="backgroundimage-container">
+        <img class="backgroundimage" src="background1-3.webp" alt="Background">
+    </div>
     
     <div class="logo"></div>
 
@@ -209,7 +220,7 @@
         <span> - Thich Nhat Hanh, Zen Philosopher</span>
     </div>
 
-
+    <!-- Book Here Button Centered Below the Quote -->
     <div class="book-here">BOOK HERE</div>
     
     <div class="container">
@@ -223,5 +234,4 @@
     </div>
 
 </body>
-    
 </html>
