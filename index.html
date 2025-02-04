@@ -220,28 +220,40 @@
         </div>
     </div>
 
-<audio src="lakeside2.mp3" autoplay loop></audio>
-
 </body>
 
-<script>
+    
+    <script>
+        
 document.addEventListener("DOMContentLoaded", function () {
-    let audio = document.querySelector("audio");
+    
+    let audio = document.createElement("audio");
+    audio.src = "lakeside2.mp3";
+    audio.loop = true;
+    document.body.appendChild(audio);
+    
     audio.volume = 0;
-    audio.play();
+    audio.muted = true;
+    
+    function fadeInAudio() {
+        let fadeInterval = setInterval(function () {
+            if (audio.volume < 1) {
+                audio.volume = Math.min(audio.volume + 0.05, 1);
+            } else {
+                clearInterval(fadeInterval);
+            }
+        }, 300);
+    }
 
-    let fadeInterval = setInterval(function () {
-        if (audio.volume < 1) {
-            audio.volume = Math.min(audio.volume + 0.05, 1);
-        } else {
-            clearInterval(fadeInterval);
-        }
-    }, 300);
+    window.addEventListener('click', function() {
+        audio.muted = false;
+        audio.play();
+        fadeInAudio();
+    });
 
     audio.addEventListener("timeupdate", function () {
-        if (audio.currentTime >= 27) {
+        if (audio.currentTime >= 29) {
             audio.currentTime = 0;
-            audio.play();
         }
     });
 });
