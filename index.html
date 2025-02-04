@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+c<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -223,15 +223,15 @@
 </body>
     <script>
 document.addEventListener("DOMContentLoaded", function () {
-    let audio = new Audio("lakeside.mp3");
-    audio.loop = true;
-    audio.play().catch(() => {
-        document.body.addEventListener("click", function () {
-            if (audio.paused) {
-                audio.play();
-            }
-        });
-    });
+    let audio = document.querySelector("audio");
+    audio.volume = 0; 
+    let fadeInterval = setInterval(function () {
+        if (audio.volume < 1) {
+            audio.volume = Math.min(audio.volume + 0.05, 1);
+        } else {
+            clearInterval(fadeInterval);
+        }
+    }, 300);
 });
 </script>
 </html>
