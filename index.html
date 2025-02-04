@@ -220,17 +220,12 @@ c<!DOCTYPE html>
         </div>
     </div>
 
-    <audio src="lakeside.mp3" autoplay></audio>
-
 </body>
-
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     let audio = document.querySelector("audio");
-    audio.volume = 0;
-    audio.play();
-    
+    audio.volume = 0; 
     let fadeInterval = setInterval(function () {
         if (audio.volume < 1) {
             audio.volume = Math.min(audio.volume + 0.05, 1);
@@ -238,13 +233,6 @@ document.addEventListener("DOMContentLoaded", function () {
             clearInterval(fadeInterval);
         }
     }, 300);
-
-    audio.addEventListener("timeupdate", function () {
-        if (audio.currentTime >= 29) {
-            audio.currentTime = 0;
-            audio.play();
-        }
-    });
 });
 </script>
 
