@@ -220,7 +220,7 @@
         </div>
     </div>
 
-<audio src="lakeside2.mp3" autoplay></audio>
+<audio src="lakeside2.mp3" autoplay loop></audio>
 
 </body>
 
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let audio = document.querySelector("audio");
     audio.volume = 0;
     audio.play();
-    
+
     let fadeInterval = setInterval(function () {
         if (audio.volume < 1) {
             audio.volume = Math.min(audio.volume + 0.05, 1);
