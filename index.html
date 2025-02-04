@@ -179,8 +179,19 @@
     z-index: 2;
     font-family: 'Montserrat', sans-serif;
 
-            animation: zoomInOut 22s infinite alternate;
+            animation: zoomInOut2 22s infinite alternate;
 }
+
+        
+
+        @keyframes zoomInOut2 {
+            0% {
+                transform: scale(1.2), translateX(-50%);
+            }
+            100% {
+                transform: scale(1), translateX(-50%);
+            }
+        }
 
     </style>
 </head>
