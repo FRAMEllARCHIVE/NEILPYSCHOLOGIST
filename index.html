@@ -223,17 +223,30 @@
     </div>
 
 </body>
+
     
     <script>
 document.addEventListener("DOMContentLoaded", function () {
     let audio = new Audio("lakeside2.mp3");
-    audio.loop = true;
-    audio.play().catch(() => {
-        document.body.addEventListener("click", function () {
-            if (audio.paused) {
-                audio.play();
-            }
-        });
+    audio.currentTime = 0; // Start from the beginning
+    audio.loop = true; // Loop the audio
+    audio.play(); // Start playing immediately
+
+    // Fade in audio over 3 seconds
+    audio.volume = 0; // Start with volume at 0
+    let fadeInInterval = setInterval(function () {
+        if (audio.volume < 1) {
+            audio.volume += 0.1; // Increase volume by 0.1 every 100ms
+        } else {
+            clearInterval(fadeInInterval); // Stop when the volume reaches 1
+        }
+    }, 100);
+
+    // Loop only the first 27 seconds
+    audio.addEventListener('timeupdate', function () {
+        if (audio.currentTime >= 27) {
+            audio.currentTime = 0; // Reset to the beginning after 27 seconds
+        }
     });
 });
 </script>
