@@ -223,38 +223,36 @@
 
 </body>
 
-    
-<script>
+    <script>
 document.addEventListener("DOMContentLoaded", function () {
     let audio = new Audio("lakeside2.mp3");
-    audio.currentTime = 0; // Start from the beginning
-    audio.loop = true; // Loop the audio
+    audio.currentTime = 0;
+    audio.loop = true;
 
-    // Try to play the audio right away
     audio.play().catch(() => {
-        // Handle autoplay failure, this ensures that the audio will play after a user gesture if needed
         document.body.addEventListener("click", function () {
             audio.play();
         });
+
+        setTimeout(() => {
+            audio.play();
+        }, 2000);
     });
 
-    // Fade-in effect over 3 seconds
-    audio.volume = 0; // Start with volume at 0
+    audio.volume = 0;
     let fadeInInterval = setInterval(function () {
         if (audio.volume < 1) {
-            audio.volume += 0.1; // Increase volume by 0.1 every 100ms
+            audio.volume += 0.1;
         } else {
-            clearInterval(fadeInInterval); // Stop when the volume reaches 1
+            clearInterval(fadeInInterval);
         }
     }, 100);
 
-    // Loop only the first 27 seconds
     audio.addEventListener('timeupdate', function () {
         if (audio.currentTime >= 27) {
-            audio.currentTime = 0; // Reset to the beginning after 27 seconds
+            audio.currentTime = 0;
         }
     });
 });
 </script>
-    
 </html>
