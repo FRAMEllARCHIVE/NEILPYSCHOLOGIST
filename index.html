@@ -227,17 +227,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     let audio = new Audio("lakeside2.mp3");
     audio.currentTime = 0; // Start from the beginning
-    audio.loop = true; // Loop the audio
-    audio.muted = true; // Start with muted audio
+    audio.loop = true; // Loop the audio (but will only loop the first 27 seconds in our function)
 
-    // Play the audio immediately after page load
-    audio.play().catch(() => {
-        console.log('Autoplay failed, this could be due to browser restrictions.');
-    });
+    // Function to play audio with fade-in effect
+    function playAudioWithFadeIn() {
+        audio.play().catch(() => {
+            console.log('Autoplay failed, this could be due to browser restrictions.');
+        });
 
-    // Fade in the volume after 100ms
-    setTimeout(() => {
-        audio.muted = false; // Unmute the audio
+        // Fade-in effect over 3 seconds
+        audio.volume = 0; // Start with volume at 0
         let fadeInInterval = setInterval(function () {
             if (audio.volume < 1) {
                 audio.volume += 0.1; // Increase volume by 0.1 every 100ms
@@ -245,9 +244,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearInterval(fadeInInterval); // Stop when the volume reaches 1
             }
         }, 100);
-    }, 100); // Delay unmute by 100ms after play
+
+        // Loop only the first 27 seconds
+        audio.addEventListener('timeupdate', function () {
+            if (audio.currentTime >= 27) {
+                audio.currentTime = 0; // Reset to the beginning after 27 seconds
+            }
+        });
+    }
+
+    // Call the function after 2 seconds
+    setTimeout(function() {
+        playAudioWithFadeIn(); // Call the function to play the audio with fade-in
+    }, 2000); // 2-second delay
 });
 </script>
-
     
 </html>
