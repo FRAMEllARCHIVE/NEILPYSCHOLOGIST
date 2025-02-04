@@ -234,4 +234,38 @@
     </div>
 
 </body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let audio = new Audio("lakeside2.mp3");
+    audio.currentTime = 0;
+    audio.loop = true;
+
+    audio.play().catch(() => {
+        document.body.addEventListener("click", function () {
+            audio.play();
+        });
+
+        setTimeout(() => {
+            audio.play();
+        }, 2000);
+    });
+
+    audio.volume = 0;
+    let fadeInInterval = setInterval(function () {
+        if (audio.volume < 1) {
+            audio.volume += 0.1;
+        } else {
+            clearInterval(fadeInInterval);
+        }
+    }, 100);
+
+    audio.addEventListener('timeupdate', function () {
+        if (audio.currentTime >= 27) {
+            audio.currentTime = 0;
+        }
+    });
+});
+</script>
+    
 </html>
