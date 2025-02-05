@@ -213,6 +213,62 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             background-color: rgba(255, 255, 255, 0.9);
         }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        width: 80%;
+        max-width: 400px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+    /* Close Button */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Modal Buttons */
+    .modal-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .location-btn {
+        text-decoration: none;
+        background: #007BFF;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background 0.3s ease;
+    }
+
+    .location-btn:hover {
+        background: #0056b3;
+    }
 
     </style>
 </head>
@@ -231,11 +287,22 @@
         <span> - Thich Nhat Hanh, Zen Philosopher</span>
     </div>
 
-<div class="book-here">
-    <a href="https://mygc.co.za/external/diary/505e92bf-ddb4-41c9-8bc5-12d81ffae676" target="_blank" style="text-decoration: none; color: inherit;">
-        BOOK HERE
-    </a>
+<div class="book-here" id="openModal">
+    BOOK HERE
 </div>
+
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Choose a Booking Location</h2>
+        <div class="modal-buttons">
+            <a href="https://maps.app.goo.gl/r4vQhzsYR7NeUV3L7" target="_blank" class="location-btn">WESTVILLE</a>
+            <a href="https://maps.app.goo.gl/r4vQhzsYR7NeUV3L7" target="_blank" class="location-btn">THE BLUFF</a>
+            <a href="https://psychologistneil.co.za/#booknow" target="_blank" class="location-btn">ONLINE</a>
+        </div>
+    </div>
+</div>
+
     
 <div class="container">
     <div class="bottom-buttons">
@@ -289,6 +356,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+            //MODAL
+
+            document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("bookingModal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.querySelector(".close");
+
+    // Open Modal on Click
+    openModal.addEventListener("click", function () {
+        modal.style.display = "flex";
+    });
+
+    // Close Modal on Click of 'X'
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    // Close Modal if Clicking Outside
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+            
 </script>
     
 </html>
