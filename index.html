@@ -150,7 +150,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px; /* Keep the same button size */
+    width: 50px;
     height: 50px;
     border-radius: 50%;
     transition: background 0.3s ease-in-out;
@@ -159,11 +159,11 @@
 .icon:focus,
 .icon:active {
     outline: none;
-    box-shadow: none; /* Removes any box-shadow highlight */
+    box-shadow: none;
 }
 
 .icon:hover {
-    background: rgba(255, 255, 255, 0.2); /* Optional: Light hover effect */
+    background: rgba(255, 255, 255, 0.2);
 }
 
         .icon i {
@@ -226,7 +226,6 @@
         align-items: center;
     }
 
-    /* Modal Content */
     .modal-content {
         background: white;
         padding: 20px;
@@ -238,16 +237,6 @@
         position: relative;
     }
 
-    /* Close Button */
-    .close {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    /* Modal Buttons */
     .modal-buttons {
         display: flex;
         flex-direction: column;
@@ -293,8 +282,7 @@
 
 <div id="bookingModal" class="modal">
     <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Choose a Booking Location</h2>
+        <h2>BOOKING LOCATION</h2>
         <div class="modal-buttons">
             <a href="https://maps.app.goo.gl/r4vQhzsYR7NeUV3L7" target="_blank" class="location-btn">WESTVILLE</a>
             <a href="https://maps.app.goo.gl/r4vQhzsYR7NeUV3L7" target="_blank" class="location-btn">THE BLUFF</a>
@@ -358,24 +346,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-            //MODAL
+ //MODAL
 
             document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("bookingModal");
     const openModal = document.getElementById("openModal");
-    const closeModal = document.querySelector(".close");
 
-    // Open Modal on Click
+                
     openModal.addEventListener("click", function () {
         modal.style.display = "flex";
     });
 
-    // Close Modal on Click of 'X'
-    closeModal.addEventListener("click", function () {
-        modal.style.display = "none";
-    });
-
-    // Close Modal if Clicking Outside
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
             modal.style.display = "none";
