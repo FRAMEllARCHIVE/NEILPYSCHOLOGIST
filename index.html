@@ -389,19 +389,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
  //MODAL
 
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const openModal = document.getElementById("openModal");
     const modal = document.getElementById("bookingModal");
 
     openModal.addEventListener("click", function () {
         const audioSnippet = new Audio("waterdropclick.mp3");
-        audioSnippet.currentTime = 111;
+        audioSnippet.currentTime = 0.222;
+        audioSnippet.volume = 0;
         audioSnippet.play();
 
+        let fadeInInterval = setInterval(function () {
+            if (audioSnippet.volume < 1) {
+                audioSnippet.volume += 0.1;
+            } else {
+                clearInterval(fadeInInterval);
+            }
+        }, 100);
+
         setTimeout(function () {
-            audioSnippet.pause();
-            audioSnippet.currentTime = 0;
-        }, 2222);
+            let fadeOutInterval = setInterval(function () {
+                if (audioSnippet.volume > 0) {
+                    audioSnippet.volume -= 0.1;
+                } else {
+                    clearInterval(fadeOutInterval);
+                    audioSnippet.pause();
+                    audioSnippet.currentTime = 0;
+                }
+            }, 100);
+        }, 2000);
 
         modal.style.display = "flex";
     });
