@@ -80,32 +80,6 @@
             }
         }
 
-        .title {
-            font-size: clamp(1.5rem, 4vw, 3.8rem);
-            font-weight: bold;
-            color: black;
-            margin-top: 11px;
-            z-index: 2;
-            letter-spacing: 2px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .quote {
-            font-size: clamp(0.6rem, 2.5vw, 1.2rem);
-            font-style: italic;
-            color: black;
-            z-index: 2;
-            padding: 0 2px;
-        }
-
-        .quote span {
-            display: block;
-            font-size: clamp(0.6rem, 1.2vw, 0.9rem);
-            color: #555;
-            margin-top: 8px;
-            text-align: right;
-            padding-right: 11px;
-        }
 
         
         .book-here {
@@ -269,15 +243,42 @@
             opacity: 0.4;
 }
 
-        .text-container {
-    max-width: 500px;
-    width: 80%;
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-            z-index: 4;
+    max-width: 90vw; /* Limits width to prevent excessive stretching */
+    width: auto;
 }
 
-.title, .quote {
-    width: 100%;
+.title, 
+.quote {
+    width: 100%; 
+    white-space: nowrap; /* Prevents text from breaking into multiple lines */
+    overflow: hidden; /* Hides overflowing text */
+    text-overflow: ellipsis; /* Adds "..." if text overflows */
+}
+
+.title {
+    font-size: clamp(1.2rem, 5vw, 3rem); /* Adjusts dynamically */
+    font-weight: bold;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
+}
+
+.quote {
+    font-size: clamp(1rem, 3.5vw, 2rem); /* Adjusts dynamically */
+    font-style: italic;
+    color: black;
+}
+
+.quote span {
+    font-size: clamp(0.8rem, 2vw, 1.5rem); /* Adjusts dynamically */
+    color: #555;
+    text-align: right;
+    padding-right: 10px;
 }
         
     </style>
