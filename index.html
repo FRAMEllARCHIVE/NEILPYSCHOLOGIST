@@ -80,15 +80,17 @@
             }
         }
 
-        .title {
-            font-size: clamp(1.5rem, 4vw, 3.8rem);
-            font-weight: bold;
-            color: black;
-            margin-top: 11px;
-            z-index: 2;
-            letter-spacing: 2px;
-            font-family: 'Montserrat', sans-serif;
-        }
+.title {
+    font-size: 9vw; /* Dynamically adjust font size based on viewport width */
+    font-weight: bold;
+    color: black;
+    width: 90vw; /* Ensures the title takes up 90% of the viewport width */
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap; /* Prevents line breaks */
+    overflow: hidden; /* Ensures no content overflow */
+}
 
         .quote {
             font-size: clamp(0.6rem, 2.5vw, 1.2rem);
