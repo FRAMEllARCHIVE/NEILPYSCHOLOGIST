@@ -24,7 +24,7 @@
             justify-content: flex-start;
             height: 100vh;
             background-color: #C9E1E8;
-            font-family: 'Montserrat', sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
             padding-top: 42px;
             gap: 20px;
@@ -37,18 +37,22 @@
             top: 0;
             left: 0;
             width: 100vw;
+            min-width: 100vw;
             height: 100vh;
             overflow: hidden;
             z-index: 1;
         }
 
         .backgroundimage {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: bottom;
-            animation: zoomInOut 22s infinite alternate;
-        }
+    width: 100%;
+    min-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    animation: zoomInOut 22s infinite alternate;
+    opacity: 1;
+    transform-origin: center 80%;
+}
 
         @keyframes zoomInOut {
             0% {
@@ -59,46 +63,55 @@
             }
         }
 
-        /* --- TITLE & QUOTE CONTAINER --- */
-        .text-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            max-width: 90vw;
-            width: auto;
-            white-space: nowrap;
-            overflow: hidden;
+        .logo {
+            width: 33vh;
+            height: 33vh;
+            background-image: url('logoneil.png');
+            background-size: 55%;
+            background-repeat: no-repeat;
+            background-position: center 60%;
+            border-radius: 50%;
+            z-index: 3;
         }
 
-        .title, .quote {
-            width: 100%;
-            text-overflow: ellipsis;
+        @media (min-width: 1024px) and (max-height: 1024px) {
+            .logo {
+                display: none;
+            }
         }
 
         .title {
-            font-size: clamp(1.2rem, 5vw, 3rem);
+            font-size: clamp(1.5rem, 4vw, 3.8rem);
             font-weight: bold;
             color: black;
+            margin-top: 11px;
+            z-index: 2;
             letter-spacing: 2px;
-            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .quote {
-            font-size: clamp(1rem, 3.5vw, 2rem);
+            font-size: clamp(0.6rem, 2.5vw, 1.2rem);
             font-style: italic;
             color: black;
+            z-index: 2;
+            padding: 0 2px;
         }
 
         .quote span {
-            font-size: clamp(0.8rem, 2vw, 1.5rem);
+            display: block;
+            font-size: clamp(0.6rem, 1.2vw, 0.9rem);
             color: #555;
+            margin-top: 8px;
             text-align: right;
-            padding-right: 10px;
+            padding-right: 11px;
         }
 
-        /* --- BOOK HERE BUTTON --- */
+        
         .book-here {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-top: 15px;
             color: white;
             font-size: clamp(1.5rem, 4vw, 3rem);
@@ -106,7 +119,7 @@
             letter-spacing: 2px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
             z-index: 2;
-            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
             animation: zoomInOut2 22s infinite alternate;
         }
 
@@ -121,62 +134,6 @@
             }
         }
 
-        /* --- MODAL STYLING --- */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 33px;
-            text-align: center;
-            width: 80%;
-            max-width: 400px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-
-        .modal-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .location-btn {
-            text-decoration: none;
-            background: #007BFF;
-            color: white;
-            padding: 10px;
-            border-radius: 22px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 2px;
-        }
-
-        .location-btn:hover {
-            background: #0056b3;
-        }
-
-        .location-icon {
-            font-size: 44px;
-            color: #007BFF;
-            opacity: 0.4;
-        }
-
-        /* --- ICONS --- */
         .icon-row {
             display: flex;
             justify-content: center;
@@ -185,25 +142,132 @@
             z-index: 2;
         }
 
-        .icon {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            transition: background 0.3s ease-in-out;
-        }
+.icon {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
 
-        .icon:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
+.icon:focus,
+.icon:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
 
         .icon i {
             font-size: 28px;
             color: white;
         }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            background: rgba(255, 255, 255, 0);
+            padding: 20px;
+            z-index: 2;
+            position: fixed;
+            bottom: 22px;
+            left: 0;
+        }
+
+        .bottom-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            max-width: 222px;
+            justify-content: center;
+        }
+
+        .ClinicalPsychologist {
+            flex: 1;
+            min-width: 120px;
+            padding: 15px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0);
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 32px;
+            text-align: center;
+            transition: background 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            letter-spacing: 2px;
+        }
+
+        .ClinicalPsychologist:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 33px;
+        text-align: center;
+        width: 80%;
+        max-width: 400px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+    .modal-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .location-btn {
+        text-decoration: none;
+        background: #007BFF;
+        color: white;
+        padding: 10px;
+        border-radius: 22px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 2px;
+    }
+
+    .location-btn:hover {
+        background: #0056b3;
+    }
+
+
+        .location-icon {
+    font-size: 44px;
+    color: #007BFF;
+            opacity: 0.4;
+}
     </style>
 </head>
 <body>
@@ -212,40 +276,105 @@
         <img class="backgroundimage" src="backgroundlake.jpg" alt="Background">
     </div>
     
-    <div class="text-container">
-        <div class="title">CLINICAL PSYCHOLOGY</div>
-        <div class="quote">
-            "We have more possibilities available in each moment than we realize."
-            <span> - Thich Nhat Hanh, Zen Philosopher</span>
+    <div class="logo"></div>
+
+    <div class="title">CLINICAL PSYCHOLOGY</div>
+
+    <div class="quote">
+        "We have more possibilities available in each moment than we realize."
+        <span> - Thich Nhat Hanh, Zen Philosopher</span>
+    </div>
+
+<div class="book-here" id="openModal">
+    BOOK HERE
+</div>
+
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+
+        <i class="fas fa-location-pin location-icon"></i>
+        
+        <div class="modal-buttons">
+            <a href="https://maps.app.goo.gl/r4vQhzsYR7NeUV3L7" target="_blank" class="location-btn">WESTVILLE</a>
+            <a href="https://maps.app.goo.gl/r4vQhzsYR7NeUV3L7" target="_blank" class="location-btn">THE BLUFF</a>
+            <a href="https://psychologistneil.co.za" target="_blank" class="location-btn">ONLINE</a>
         </div>
     </div>
+</div>
 
-    <div class="book-here" id="openModal">
-        BOOK HERE
-    </div>
+    
+<div class="container">
+    <div class="bottom-buttons">
+        <div class="icon-row">
+            
+            <a href="https://api.whatsapp.com/send/?phone=27814446461" target="_blank" class="icon" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
 
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <i class="fas fa-location-pin location-icon"></i>
-            <div class="modal-buttons">
-                <a href="https://maps.app.goo.gl/r4vQhzsYR7NeUV3L7" target="_blank" class="location-btn">WESTVILLE</a>
-                <a href="https://maps.app.goo.gl/r4vQhzsYR7NeUV3L7" target="_blank" class="location-btn">THE BLUFF</a>
-                <a href="https://psychologistneil.co.za" target="_blank" class="location-btn">ONLINE</a>
-            </div>
+            <a href="mailto:tjdebeer@gmail.com" class="icon" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+
+            <a href="https://psychologistneil.co.za" target="_blank" class="icon" aria-label="Info">
+                <i class="fas fa-info-circle"></i>
+            </a>
         </div>
     </div>
-
-    <div class="icon-row">
-        <a href="https://api.whatsapp.com/send/?phone=27814446461" target="_blank" class="icon">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="mailto:tjdebeer@gmail.com" class="icon">
-            <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://psychologistneil.co.za" target="_blank" class="icon">
-            <i class="fas fa-info-circle"></i>
-        </a>
-    </div>
+</div>
 
 </body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let audio = new Audio("lakeside2.mp3");
+    audio.currentTime = 0;
+    audio.loop = true;
+
+    audio.play().catch(() => {
+        document.body.addEventListener("click", function () {
+            audio.play();
+        });
+
+        setTimeout(() => {
+            audio.play();
+        }, 2000);
+    });
+
+    audio.volume = 0;
+    let fadeInInterval = setInterval(function () {
+        if (audio.volume < 1) {
+            audio.volume += 0.1;
+        } else {
+            clearInterval(fadeInInterval);
+        }
+    }, 100);
+
+    audio.addEventListener('timeupdate', function () {
+        if (audio.currentTime >= 27) {
+            audio.currentTime = 0;
+        }
+    });
+});
+
+
+ //MODAL
+
+            document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("bookingModal");
+    const openModal = document.getElementById("openModal");
+
+                
+    openModal.addEventListener("click", function () {
+        modal.style.display = "flex";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+            
+</script>
+    
 </html>
