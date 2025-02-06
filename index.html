@@ -83,31 +83,31 @@
 .title {
     font-weight: bold;
     color: black;
-    width: 82vw; /* Ensures the title only takes up 90% of the viewport width */
+    width: 82vw;
     text-align: center;
     letter-spacing: 2px;
     font-family: 'Montserrat', sans-serif;
-    white-space: nowrap; /* Prevents line breaks */
-    overflow: hidden; /* Ensures no content overflow */
+    white-space: nowrap;
+    overflow: hidden;
     z-index: 4;
 }
 
         .quote {
-            font-size: clamp(0.6rem, 2.5vw, 1.2rem);
-            font-style: italic;
-            color: black;
-            z-index: 2;
-            padding: 0 2px;
-        }
+    font-size: clamp(0.6rem, 2.5vw, 1.2rem);
+    font-style: italic;
+    color: black;
+    z-index: 2;
+    padding: 0 2px;
+}
 
-        .quote span {
-            display: block;
-            font-size: clamp(0.6rem, 1.2vw, 0.9rem);
-            color: #555;
-            margin-top: 8px;
-            text-align: right;
-            padding-right: 11px;
-        }
+.quote span {
+    display: block;
+    font-size: clamp(0.6rem, 1.2vw, 0.9rem);
+    color: #555;
+    margin-top: 8px;
+    text-align: right;
+    padding-right: 11px;
+}
 
         
         .book-here {
@@ -332,20 +332,27 @@
 document.addEventListener("DOMContentLoaded", function () {
     function adjustFontSize() {
         const title = document.querySelector('.title');
-        const titleWidth = title.offsetWidth; // Get the width of the title element
-        const containerWidth = window.innerWidth * 0.9; // Get 90% of the viewport width
-        const scaleFactor = containerWidth / titleWidth; // Calculate scale factor to fit within 90vw
+        const quote = document.querySelector('.quote');
         
-        // Set the font size dynamically using the scale factor
-        const fontSize = Math.min(10 * scaleFactor, 6); // Max font size is 6vw, adjust as needed
-        title.style.fontSize = `${fontSize}vw`; // Apply the font size
+
+        const titleWidth = title.offsetWidth;
+        const containerWidth = window.innerWidth * 0.9;
+        const scaleFactorTitle = containerWidth / titleWidth;
+        
+        const fontSizeTitle = Math.min(10 * scaleFactorTitle, 6);
+        title.style.fontSize = `${fontSizeTitle}vw`;
+
+
+        const quoteWidth = quote.offsetWidth;
+        const scaleFactorQuote = containerWidth / quoteWidth;
+        
+        const fontSizeQuote = Math.min(4 * scaleFactorQuote, 2);
+        quote.style.fontSize = `${fontSizeQuote}vw`;
     }
 
-    // Adjust font size on load and on window resize
     adjustFontSize();
     window.addEventListener('resize', adjustFontSize);
 });
-
 
 
     
