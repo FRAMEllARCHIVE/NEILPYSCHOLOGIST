@@ -395,13 +395,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     openModal.addEventListener("click", function () {
         const audioSnippet = new Audio("waterdropclick.mp3");
-        audioSnippet.currentTime = 1;
+        audioSnippet.currentTime = 111;
         audioSnippet.play();
 
         setTimeout(function () {
             audioSnippet.pause();
             audioSnippet.currentTime = 0;
-        }, 2000);
+        }, 2222);
 
         modal.style.display = "flex";
     });
