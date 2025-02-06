@@ -389,12 +389,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
  //MODAL
 
-            document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("bookingModal");
+    document.addEventListener("DOMContentLoaded", function () {
     const openModal = document.getElementById("openModal");
+    const modal = document.getElementById("bookingModal");
 
-                
     openModal.addEventListener("click", function () {
+        const audioSnippet = new Audio("waterdropclick.mp3");
+        audioSnippet.currentTime = 1;
+        audioSnippet.play();
+
+        setTimeout(function () {
+            audioSnippet.pause();
+            audioSnippet.currentTime = 0;
+        }, 2000);
+
         modal.style.display = "flex";
     });
 
@@ -404,6 +412,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
             
 </script>
     
