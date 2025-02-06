@@ -326,6 +326,28 @@
 </body>
 
 <script>
+
+    
+document.addEventListener("DOMContentLoaded", function () {
+    function adjustFontSize() {
+        const title = document.querySelector('.title');
+        const titleWidth = title.offsetWidth; // Get the width of the title element
+        const containerWidth = window.innerWidth * 0.9; // Get 90% of the viewport width
+        const scaleFactor = containerWidth / titleWidth; // Calculate scale factor to fit within 90vw
+        
+        // Set the font size dynamically using the scale factor
+        const fontSize = Math.min(10 * scaleFactor, 6); // Max font size is 6vw, adjust as needed
+        title.style.fontSize = `${fontSize}vw`; // Apply the font size
+    }
+
+    // Adjust font size on load and on window resize
+    adjustFontSize();
+    window.addEventListener('resize', adjustFontSize);
+});
+
+
+
+    
 document.addEventListener("DOMContentLoaded", function () {
     let audio = new Audio("lakeside2.mp3");
     audio.currentTime = 0;
