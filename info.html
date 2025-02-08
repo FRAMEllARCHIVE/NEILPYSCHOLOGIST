@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -5,367 +6,204 @@
   <meta name="description" content="Neil Clinical Psychology provides mental health services including therapy, ketamine-assisted psychotherapy, and online consultations.">
   <meta name="keywords" content="clinical psychology, psychotherapy, ketamine therapy, anxiety treatment, depression therapy, online therapy, couples therapy">
   <meta name="author" content="Neil Clinical Psychology">
-  <title>Neil Clinical Psychology</title>
+  <title> Neil Clinical Psychology</title>
+
+  
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-<style>
-  :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --text-color: #333;
-    --background-color: #f4f4f4;
-  }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
 
-  body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-  }
-
-  header {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    position: relative;
-  }
-
-  nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: var(--text-color);
-    transition: color 0.3s ease;
-  }
-
-  nav a:hover {
-    color: var(--primary-color);
-  }
-
-  .cta a {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-  }
-
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 0.3rem;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  .hamburger div {
-    width: 30px;
-    height: 3px;
-    background-color: var(--text-color);
-  }
-
-  .menu {
-    display: flex;
-  }
-
-  .menu.active {
-    display: block;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 1rem 0;
-    text-align: center;
-  }
-
-  .menu li {
-    display: block;
-    margin: 0.5rem 0;
-  }
-
-  main {
-    padding-top: 80px;
-  }
-
-  section {
-    position: relative;
-    overflow: hidden;
-    padding: 6rem 5%;
-    text-align: center;
-  }
-
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .hero .content {
-    max-width: 800px;
-    text-align: center;
-  }
-
-  .btn {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-  }
-
-  .expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-
-  .expertise-item {
-    transition: all 0.3s ease;
-    transform: scale(1);
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 1.5rem;
-    text-align: center;
-  }
-
-  .expertise-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  }
-
-  .contact-form {
-    display: grid;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  footer {
-    background-color: var(--text-color);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-  }
-
-  .footer-links a {
-    color: white;
-    margin: 0 1rem;
-    text-decoration: none;
-  }
-
-  blockquote {
-    font-style: italic;
-    margin: 1rem 0;
-    padding: 1rem;
-    background-color: rgba(255,255,255,0.1);
-    border-left: 4px solid var(--primary-color);
-  }
-
-  blockquote footer {
-    margin-top: 0.5rem;
-    text-align: right;
-    font-size: 0.9rem;
-  }
-
-  #faq .faq-item ul {
-    list-style-type: disc;
-    padding-left: 2rem;
-    text-align: left;
-  }
-
-  .location-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  #book .booking-steps ol {
-    text-align: left;
-    padding-left: 2rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  #book .booking-steps p {
-    margin-top: 1rem;
-  }
-
-  .about-content {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .about-image, 
-  .imago-image, 
-  .approach-image, 
-  .ketamine-image, 
-  .online-image {
-    max-width: 500px;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-
-  .imago-content,
-  .approach-content,
-  .ketamine-content,
-  .online-content {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 1rem;
-  }
-
-  .form-wrapper {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .google-form {
-    width: 100%;
-    height: 600px;
-    border: none;
-  }
-
-  @media (max-width: 768px) {
     header {
-      position: fixed;
-      width: 100%;
-      background: white;
-      z-index: 1000;
+      background-color: #004d66;
+      color: white;
+      padding: 10px 0;
     }
 
     nav {
-      flex-direction: column;
-      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
     }
 
     nav ul {
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .hamburger {
+      list-style: none;
       display: flex;
     }
 
-    .menu {
-      display: none;
+    nav ul li {
+      margin-left: 20px;
     }
 
-    .menu.active {
-      display: block;
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
     }
 
-    .hero .content {
-      padding: 0 1rem;
+    .hero {
+      background: url('https://via.placeholder.com/1600x600?text=Background') no-repeat center center/cover;
+      padding: 100px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
     }
 
     .about-content {
-      flex-direction: column;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
     }
 
     .about-image {
-      max-width: 100%;
-      margin-bottom: 1rem;
+      max-width: 400px;
+      border-radius: 10px;
+      margin-right: 30px;
+    }
+
+    .about-text {
+      max-width: 600px;
     }
 
     section {
-      padding: 4rem 1rem;
-    }
-
-    .expertise-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .imago-content,
-    .approach-content,
-    .ketamine-content,
-    .online-content {
-      flex-direction: column;
+      padding: 60px 20px;
       text-align: center;
     }
 
-    .imago-image,
-    .approach-image,
-    .ketamine-image,
-    .online-image {
-      max-width: 100%;
-      margin-bottom: 1rem;
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
     }
 
-    .contact-form {
-      width: 100%;
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
     }
 
-    .google-form {
-      height: 800px;
+    .expertise-item {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
     }
-  }
-</style>
 
+    .expertise-item:hover {
+      transform: translateY(-5px);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 18px;
+    }
+
+    ul li {
+      margin: 10px 0;
+    }
+
+    .faq-item {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #004d66;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #004d66;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .button:hover {
+      background-color: #00334d;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+
+      .about-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
 <body>
+
   <header>
     <nav>
-      <div class="logo">LOGO</div>
-      <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <ul class="menu">
+      <div class="logo">ABF Clinical Psychology</div>
+      <ul>
+        <li><a href="#about">About Me</a></li>
         <li><a href="#expertise">Expertise</a></li>
         <li><a href="#ketamine">Ketamine</a></li>
         <li><a href="#online">Online</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li class="cta"><a href="#book">Book Now</a></li>
+        <li><a href="#book">Book Now</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+
     <section id="about" class="hero" data-aos="fade-up">
       <div class="content">
-        <h1>Clinical Psychologist</h1>
+        <h1>About Me</h1>
         <div class="about-content">
           <img src="https://via.placeholder.com/400x300?text=Clinical+Psychology" alt="Clinical Psychology" data-aos="fade-right" class="about-image">
           <div class="about-text">
-            <p data-aos="fade-right">I am deeply interested in how people think, feel, and behave. I appreciate the journey of self-discovery and helping people heighten their self-awareness to increase resilience towards life's challenges. I am experienced in working with children, adolescents, and adults; and I also enjoy working with families.</p>
+            <p data-aos="fade-right">I am deeply interested in how people think, feel, and behave. I appreciate the journey of self-discovery and helping people heighten their self-awareness to increase resilience towards life's challenges. I am experienced in working with children, adolescents, and adults, and I also enjoy working with families.</p>
           </div>
         </div>
       </div>
@@ -389,15 +227,84 @@
       </div>
     </section>
 
-    <section id="contact" data-aos="fade-up">
-      <h2>Contact</h2>
-      <div class="form-wrapper">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0QBQMntTxJTXpoGuSEHUyw79XMXvFfsR9j-zOxIYYeJ1YtQ/viewform?embedded=true" class="google-form" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    <section id="how-I-can-help" data-aos="fade-up">
+      <h2>How I Can Help</h2>
+      <ul>
+        <li>Anxiety</li>
+        <li>Depression</li>
+        <li>Complex Grief</li>
+        <li>Trauma</li>
+        <li>Adjustment to Change</li>
+        <li>Financial Stress</li>
+        <li>Interpersonal Relationships</li>
+        <li>Existential Crisis</li>
+        <li>Adolescent Challenges</li>
+        <li>Career Assessments</li>
+        <li>Couples Counselling</li>
+      </ul>
+    </section>
+
+    <section id="imago" data-aos="fade-up">
+      <h2>Imago for Couples</h2>
+      <p>I use Imago Therapy to assist couples in learning better ways of communicating. The first session with a couple is usually two hours long. Kindly request this during booking.</p>
+    </section>
+
+    <section id="approach" data-aos="fade-up">
+      <h2>My Approach</h2>
+      <p>I am solution-focused and practice a range of psychodynamic therapies, mindfulness approaches, and behavioral interventions. I also specialize in BWRT (Brain Working Recursive Therapy), which is highly effective in treating a wide range of mental health conditions.</p>
+    </section>
+
+    <section id="ketamine" data-aos="fade-up">
+      <h2>Ketamine-Assisted Psychotherapy</h2>
+      <p>Ketamine-assisted psychotherapy (KAP) involves prescribed doses of ketamine used as an adjunct to psychotherapy. KAP is effective for treating conditions like treatment-resistant depression (TRD), anxiety, OCD, PTSD, and substance abuse.</p>
+      <p>Contact me for more information.</p>
+    </section>
+
+    <section id="online" data-aos="fade-up">
+      <h2>Online Therapy</h2>
+      <p>I offer online consultations. While face-to-face therapy is recommended, online therapy is an excellent option for those who feel anxious about starting therapy or live far away from my practice. If preferred, I’ll send a link to schedule an online video consultation.</p>
+    </section>
+
+    <section id="faq" data-aos="fade-up">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is Therapy and Counselling?</h3>
+        <p>Therapy is simply talking to someone within a safe, confidential space. It allows you to open up about your feelings, challenges, and express yourself freely. A skilled therapist helps you make sense of your experiences and deepens your self-awareness to enhance your coping skills.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does therapy or counselling help?</h3>
+        <p>Yes! Therapy is evidence-based and helps treat anxiety, depression, addiction, and other emotional challenges. It can lead to improved self-awareness and better coping mechanisms.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I know if I need counselling?</h3>
+        <p>If you are struggling with emotional challenges such as difficulty focusing, sleeping, stress, or feeling disconnected from life, therapy can help. These are common signs that therapy can support you in making positive changes.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How many sessions will I need?</h3>
+        <p>Sessions typically range from 3 to 6, depending on your circumstances. The first session helps determine a plan for your treatment. More sessions may be needed based on progress.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much does it cost?</h3>
+        <p>Consultations are covered by most medical aid schemes, depending on your policy. If paying privately, the fee is R1350 per session. I accept various payment methods such as cash, card, EFT, Zapper, and PayPal.</p>
       </div>
     </section>
-    
+
+    <section id="book" data-aos="fade-up">
+      <h2>Book Now</h2>
+      <p>Follow these steps to book a session:</p>
+      <ol>
+        <li>Select your location</li>
+        <li>Choose a date and time</li>
+        <li>Register if it’s your first time</li>
+        <li>Confirm your booking and receive a confirmation email</li>
+      </ol>
+      <p>For help with booking, contact Shakayla at 081 444 6461 via WhatsApp or phone.</p>
+    </section>
+
   </main>
-  <p>&copy; 2025 Neil Clinical Psychologist. All rights reserved.</p>
+
+  <footer>
+    <p>&copy; 2025 Neil Clinical Psychologist. All rights reserved.</p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -406,11 +313,7 @@
       duration: 1200,
       easing: 'ease-in-out-back'
     });
-
-    function toggleMenu() {
-      const menu = document.querySelector('.menu');
-      menu.classList.toggle('active');
-    }
   </script>
+
 </body>
 </html>
