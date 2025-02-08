@@ -256,18 +256,74 @@
     margin-top: 1rem;
   }
 
-  .form-wrapper {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .google-form {
+#contactForm {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 600px;
+    gap: 15px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    display: block;
+}
+
+#contactForm textarea {
+    height: 120px;
+    resize: none;
+}
+
+#formMessage {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.location-btn {
+    text-decoration: none;
+    background: #007BFF;
+    color: white;
+    padding: 12px;
+    border-radius: 22px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
     border: none;
-  }
+    text-align: center;
+}
 
+.location-btn:hover {
+    background: #0056b3;
+}
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+    
   @media (max-width: 768px) {
     header {
       position: fixed;
@@ -338,74 +394,7 @@
       margin-bottom: 1rem;
     }
   }
-.form-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#contactForm {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 15px;
-}
-
-#contactForm input,
-#contactForm textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    box-sizing: border-box;
-    display: block;
-}
-
-#contactForm textarea {
-    height: 120px;
-    resize: none;
-}
-
-#formMessage {
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.location-btn {
-    text-decoration: none;
-    background: #007BFF;
-    color: white;
-    padding: 12px;
-    border-radius: 22px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1px;
-    cursor: pointer;
-    border: none;
-    text-align: center;
-}
-
-.location-btn:hover {
-    background: #0056b3;
-}
-
-.logo img {
-    max-width: 150px;
-    height: auto;
-}
-    
+  
 </style>
 
 <body>
