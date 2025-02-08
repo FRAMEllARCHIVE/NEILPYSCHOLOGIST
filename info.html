@@ -29,38 +29,6 @@
     background-color: var(--background-color);
   }
 
-  header {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    position: relative;
-  }
-
-  nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: var(--text-color);
-    transition: color 0.3s ease;
-  }
-
-  nav a:hover {
-    color: var(--primary-color);
-  }
-
   .cta a {
     background-color: var(--primary-color);
     color: white;
@@ -68,40 +36,7 @@
     border-radius: 5px;
   }
 
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 0.3rem;
-    cursor: pointer;
-    z-index: 1001;
-  }
 
-  .hamburger div {
-    width: 30px;
-    height: 3px;
-    background-color: var(--text-color);
-  }
-
-  .menu {
-    display: flex;
-  }
-
-  .menu.active {
-    display: block;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    padding: 1rem 0;
-    text-align: center;
-  }
-
-  .menu li {
-    display: block;
-    margin: 0.5rem 0;
-  }
 
   main {
     padding-top: 80px;
