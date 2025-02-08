@@ -115,16 +115,15 @@
   }
 
 .hero h1 {
-  font-size: 8vw; /* Adjust text size to be 90vw but within reason */
-  max-width: 90vw; /* Ensure it doesn't exceed the screen width */
+  font-size: 8vw;
+  max-width: 90vw;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-  
   .hero {
-   min-height: 85vh; /* Adjust height to bring text higher */
-  padding-top: 5rem; /* Reduce space at the top */
+   min-height: 85vh;
+  padding-top: 5rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     display: flex;
@@ -169,12 +168,7 @@
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   }
 
-  .contact-form {
-    display: grid;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
-  }
+  
 
   footer {
     background-color: var(--text-color);
@@ -344,13 +338,66 @@
       margin-bottom: 1rem;
     }
 
-    .contact-form {
-      width: 100%;
-    }
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-    .google-form {
-      height: 800px;
-    }
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#contactForm textarea {
+    height: 120px;
+    resize: none;
+}
+
+#formMessage {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.location-btn {
+    text-decoration: none;
+    background: #007BFF;
+    color: white;
+    padding: 12px;
+    border-radius: 22px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.location-btn:hover {
+    background: #0056b3;
+}
   }
 </style>
 
@@ -406,11 +453,17 @@
     </section>
 
     <section id="contact" data-aos="fade-up">
-      <h2>Contact</h2>
-      <div class="form-wrapper">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0QBQMntTxJTXpoGuSEHUyw79XMXvFfsR9j-zOxIYYeJ1YtQ/viewform?embedded=true" class="google-form" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-      </div>
-    </section>
+    <h2>Contact</h2>
+    <div class="form-wrapper">
+        <form id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="location-btn">SEND MESSAGE</button>
+        </form>
+        <p id="formMessage" style="margin-top: 10px; font-size: 14px;"></p>
+    </div>
+</section>
     
   </main>
   <p>&copy; 2025 Neil Clinical Psychologist. All rights reserved.</p>
@@ -427,6 +480,40 @@
       const menu = document.querySelector('.menu');
       menu.classList.toggle('active');
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(contactForm);
+
+      
+        const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSf0QBQMntTxJTXpoGuSEHUyw79XMXvFfsR9j-zOxIYYeJ1YtQ/formResponse";
+
+        const data = new URLSearchParams();
+        data.append("entry.YOUR_NAME_FIELD_ID", formData.get("name"));
+        data.append("entry.YOUR_EMAIL_FIELD_ID", formData.get("email"));
+        data.append("entry.YOUR_MESSAGE_FIELD_ID", formData.get("message"));
+
+        fetch(googleFormURL, {
+            method: "POST",
+            body: data,
+            mode: "no-cors"
+        })
+        .then(() => {
+            formMessage.innerText = "Thank you! Your message has been sent.";
+            formMessage.style.color = "green";
+            contactForm.reset();
+        })
+        .catch(() => {
+            formMessage.innerText = "Oops! Something went wrong. Please try again.";
+            formMessage.style.color = "red";
+        });
+    });
+});
   </script>
 </body>
 </html>
