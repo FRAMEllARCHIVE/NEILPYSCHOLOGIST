@@ -330,10 +330,9 @@
     
 <div id="locationModal" class="modal">
     <div class="modal-content">
-<div id="map-container" style="width: 333px; height: 333px; border-radius: 33px; overflow: hidden; margin-top: 10px; margin: auto;">
-    <a id="mapLink" href="" target="_blank" style="display: block; width: 100%; height: 100%;"></a>
-    <iframe id="mapFrame" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div>
+        <div id="map-container" style="width: 333px; height: 333px; border-radius: 50%; overflow: hidden; margin-top: 22px; margin: auto;">
+            <iframe id="mapFrame" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
 
         <p id="locationAddress" style="margin-top: 15px; font-size: 16px; color: black; font-weight: bold;"></p>
 
@@ -353,13 +352,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const locationAddress = document.getElementById("locationAddress");
     const appointmentBtn = document.getElementById("appointmentBtn");
 
-function openLocationModal(mapURL, address, appointmentLink, googleMapsURL) {
-    mapFrame.src = mapURL;
-    locationAddress.innerText = address;
-    appointmentBtn.href = appointmentLink;
-    document.getElementById('mapLink').href = googleMapsURL;
-    locationModal.style.display = "flex";
-}
+    function openLocationModal(mapURL, address, appointmentLink) {
+        mapFrame.src = mapURL;
+        locationAddress.innerText = address;
+        appointmentBtn.href = appointmentLink;
+        locationModal.style.display = "flex";
+    }
 
 document.querySelectorAll(".open-location-modal").forEach(button => {
     button.addEventListener("click", function (event) {
@@ -370,15 +368,13 @@ document.querySelectorAll(".open-location-modal").forEach(button => {
             openLocationModal(
                 "https://maps.google.com/maps?q=-29.825,-30.947&hl=es&z=14&output=embed",
                 "Westville, Durban, South Africa",
-                "https://mygc.co.za/external/diary/505e92bf-ddb4-41c9-8bc5-12d81ffae676",
-                "https://www.google.com/maps?q=-29.825,-30.947"  // Google Maps link
+                "https://mygc.co.za/external/diary/505e92bf-ddb4-41c9-8bc5-12d81ffae676"
             );
         } else if (location === "bluff") {
             openLocationModal(
                 "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.6469313054745!2d31.023779476313745!3d-29.903272424745683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef7a923ca92f11b%3A0x16a27cd2b3fb2c62!2s297%20Lighthouse%20Rd%2C%20Fynnlands%2C%20Bluff%2C%204052!5e0!3m2!1sen!2sza!4v1739006295260!5m2!1sen!2sza",
                 "297 Lighthouse Rd, Fynnlands, Bluff, 4052, South Africa",
-                "https://mygc.co.za/external/diary/fcc81486-178c-4cfe-ad19-fcc7d0f93aa1",
-                "https://maps.app.goo.gl/pZnVjktvNZVN9zwD7"
+                "https://mygc.co.za/external/diary/fcc81486-178c-4cfe-ad19-fcc7d0f93aa1"
             );
         }
     });
