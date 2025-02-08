@@ -7,8 +7,7 @@
   <meta name="author" content="ABF Clinical Psychology">
   <title>ABF Clinical Psychology</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="icon" href="https://via.placeholder.com/32" type="image/png"> <!-- Add a favicon -->
-</head>
+  <link rel="icon" href="https://via.placeholder.com/32" type="image/png">
   <style>
     :root {
       --primary-color: #3498db;
@@ -221,9 +220,7 @@
 
     @media (max-width: 768px) {
       header {
-        position: fixed;
-        width: 100%;
-        background: white;
+        background-color: white;
         z-index: 1000;
       }
 
@@ -236,57 +233,46 @@
         width: 100%;
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
+        gap: 1rem;
+        padding: 0;
+        display: none;
       }
 
-      .hero .content {
-        padding: 0 1rem;
+      nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
       }
 
-      .about-content {
-        flex-direction: column;
-        text-align: center;
+      nav a:hover {
+        color: var(--primary-color);
       }
 
-      .about-image {
-        max-width: 100%;
-        margin-bottom: 1rem;
+      .menu-icon {
+        cursor: pointer;
+        font-size: 2rem;
+        color: var(--primary-color);
       }
 
-      section {
-        padding: 4rem 1rem;
+      .cta a {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
       }
 
-      .expertise-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .imago-content,
-      .approach-content,
-      .ketamine-content,
-      .online-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .imago-image,
-      .approach-image,
-      .ketamine-image,
-      .online-image {
-        max-width: 100%;
-        margin-bottom: 1rem;
-      }
-
-      .contact-form {
-        width: 100%;
+      .active {
+        display: flex;
       }
     }
   </style>
+</head>
 <body>
   <header>
     <nav>
       <div class="logo">ABF</div>
-      <ul>
+      <ul id="nav-links">
         <li><a href="#expertise">Expertise</a></li>
         <li><a href="#ketamine">Ketamine</a></li>
         <li><a href="#online">Online</a></li>
@@ -294,6 +280,7 @@
         <li><a href="#contact">Contact</a></li>
         <li class="cta"><a href="#book">Book Now</a></li>
       </ul>
+      <div class="menu-icon" id="menu-icon">&#9776;</div>
     </nav>
   </header>
 
@@ -328,11 +315,10 @@
       </div>
     </section>
 
-<section id="contact" data-aos="fade-up">
-  <h2>Contact</h2>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0QBQMntTxJTXpoGuSEHUyw79XMXvFfsR9j-zOxIYYeJ1YtQ/viewform?embedded=true" width="333" height="824" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</section>
-    
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0QBQMntTxJTXpoGuSEHUyw79XMXvFfsR9j-zOxIYYeJ1YtQ/viewform?embedded=true" width="333" height="824" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
   </main>
 
   <footer>
@@ -351,19 +337,11 @@
       easing: 'ease-in-out-back'
     });
 
-    // Form validation
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const name = this.name.value.trim();
-      const email = this.email.value.trim();
-      const message = this.message.value.trim();
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinks = document.getElementById('nav-links');
 
-      if (!name || !email || !message) {
-        alert('Please fill in all fields.');
-        return;
-      }
-      alert('Message Sent! We will get back to you soon.');
-      this.reset();
+    menuIcon.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
     });
   </script>
 </body>
