@@ -83,7 +83,7 @@
 .title {
     font-weight: bold;
     color: black;
-    width: 82vw;
+    width: 77vw;
     text-align: center;
     letter-spacing: 2px;
     font-family: 'Montserrat', sans-serif;
@@ -193,27 +193,6 @@
             justify-content: center;
         }
 
-        .ClinicalPsychologist {
-            flex: 1;
-            min-width: 120px;
-            padding: 15px;
-            border: none;
-            background-color: rgba(255, 255, 255, 0);
-            color: black;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 32px;
-            text-align: center;
-            transition: background 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            letter-spacing: 2px;
-        }
-
-        .ClinicalPsychologist:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            background-color: rgba(255, 255, 255, 0.9);
-        }
         
     .modal {
         display: none;
@@ -412,7 +391,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
 
         const titleWidth = title.offsetWidth;
-        const containerWidth = window.innerWidth * 0.8;
+        const containerWidth = window.innerWidth * 0.7;
         const scaleFactorTitle = containerWidth / titleWidth;
         
         const fontSizeTitle = Math.min(10 * scaleFactorTitle, 6);
