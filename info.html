@@ -2,282 +2,286 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ABF Clinical Psychology provides mental health services including therapy, ketamine-assisted psychotherapy, and online consultations.">
+  <meta name="keywords" content="clinical psychology, psychotherapy, ketamine therapy, anxiety treatment, depression therapy, online therapy, couples therapy">
+  <meta name="author" content="ABF Clinical Psychology">
   <title>ABF Clinical Psychology</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="https://via.placeholder.com/32" type="image/png"> <!-- Add a favicon -->
 </head>
   <style>
     :root {
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --text-color: #333;
-  --background-color: #f4f4f4;
-}
+      --primary-color: #3498db;
+      --secondary-color: #2ecc71;
+      --text-color: #333;
+      --background-color: #f4f4f4;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-color);
+    }
 
-header {
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-}
+    header {
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 5%;
-}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+    }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-}
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
 
-nav a {
-  text-decoration: none;
-  color: var(--text-color);
-  transition: color 0.3s ease;
-}
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.3s ease;
+    }
 
-nav a:hover {
-  color: var(--primary-color);
-}
+    nav a:hover {
+      color: var(--primary-color);
+    }
 
-.cta a {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-}
+    .cta a {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
 
-main {
-  padding-top: 80px;
-}
+    main {
+      padding-top: 80px;
+    }
 
-section {
-  position: relative;
-  overflow: hidden;
-  padding: 6rem 5%;
-  text-align: center;
-}
+    section {
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 5%;
+      text-align: center;
+    }
 
-.hero {
-  min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-.hero .content {
-  max-width: 800px;
-  text-align: center;
-}
+    .hero .content {
+      max-width: 800px;
+      text-align: center;
+    }
 
-.btn {
-  display: inline-block;
-  background-color: var(--secondary-color);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 1rem;
-}
+    .btn {
+      display: inline-block;
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
 
-.expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
 
-.expertise-item {
-  transition: all 0.3s ease;
-  transform: scale(1);
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  text-align: center;
-}
+    .expertise-item {
+      transition: all 0.3s ease;
+      transform: scale(1);
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      text-align: center;
+    }
 
-.expertise-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
+    .expertise-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
 
-.contact-form {
-  display: grid;
-  gap: 1rem;
-  max-width: 500px;
-  margin: 0 auto;
-}
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
 
-footer {
-  background-color: var(--text-color);
-  color: white;
-  text-align: center;
-  padding: 2rem;
-}
+    footer {
+      background-color: var(--text-color);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
 
-.footer-links a {
-  color: white;
-  margin: 0 1rem;
-  text-decoration: none;
-}
+    .footer-links a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
 
-blockquote {
-  font-style: italic;
-  margin: 1rem 0;
-  padding: 1rem;
-  background-color: rgba(255,255,255,0.1);
-  border-left: 4px solid var(--primary-color);
-}
+    blockquote {
+      font-style: italic;
+      margin: 1rem 0;
+      padding: 1rem;
+      background-color: rgba(255,255,255,0.1);
+      border-left: 4px solid var(--primary-color);
+    }
 
-blockquote footer {
-  margin-top: 0.5rem;
-  text-align: right;
-  font-size: 0.9rem;
-}
+    blockquote footer {
+      margin-top: 0.5rem;
+      text-align: right;
+      font-size: 0.9rem;
+    }
 
-#faq .faq-item ul {
-  list-style-type: disc;
-  padding-left: 2rem;
-  text-align: left;
-}
+    #faq .faq-item ul {
+      list-style-type: disc;
+      padding-left: 2rem;
+      text-align: left;
+    }
 
-.location-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
+    .location-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
 
-#book .booking-steps ol {
-  text-align: left;
-  padding-left: 2rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
+    #book .booking-steps ol {
+      text-align: left;
+      padding-left: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-#book .booking-steps p {
-  margin-top: 1rem;
-}
+    #book .booking-steps p {
+      margin-top: 1rem;
+    }
 
-.about-content {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 1rem;
-}
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
 
-.about-image, 
-.imago-image, 
-.approach-image, 
-.ketamine-image, 
-.online-image {
-  max-width: 500px;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+    .about-image, 
+    .imago-image, 
+    .approach-image, 
+    .ketamine-image, 
+    .online-image {
+      max-width: 500px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
 
-.imago-content,
-.approach-content,
-.ketamine-content,
-.online-content {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-top: 1rem;
-}
+    .imago-content,
+    .approach-content,
+    .ketamine-content,
+    .online-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
 
-@media (max-width: 768px) {
-  header {
-    position: fixed;
-    width: 100%;
-    background: white;
-    z-index: 1000;
-  }
+    @media (max-width: 768px) {
+      header {
+        position: fixed;
+        width: 100%;
+        background: white;
+        z-index: 1000;
+      }
 
-  nav {
-    flex-direction: column;
-    padding: 1rem;
-  }
+      nav {
+        flex-direction: column;
+        padding: 1rem;
+      }
 
-  nav ul {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
+      nav ul {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
-  .hero .content {
-    padding: 0 1rem;
-  }
+      .hero .content {
+        padding: 0 1rem;
+      }
 
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
 
-  .about-image {
-    max-width: 100%;
-    margin-bottom: 1rem;
-  }
+      .about-image {
+        max-width: 100%;
+        margin-bottom: 1rem;
+      }
 
-  section {
-    padding: 4rem 1rem;
-  }
+      section {
+        padding: 4rem 1rem;
+      }
 
-  .expertise-grid {
-    grid-template-columns: 1fr;
-  }
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
 
-  .imago-content,
-  .approach-content,
-  .ketamine-content,
-  .online-content {
-    flex-direction: column;
-    text-align: center;
-  }
+      .imago-content,
+      .approach-content,
+      .ketamine-content,
+      .online-content {
+        flex-direction: column;
+        text-align: center;
+      }
 
-  .imago-image,
-  .approach-image,
-  .ketamine-image,
-  .online-image {
-    max-width: 100%;
-    margin-bottom: 1rem;
-  }
+      .imago-image,
+      .approach-image,
+      .ketamine-image,
+      .online-image {
+        max-width: 100%;
+        margin-bottom: 1rem;
+      }
 
-  .contact-form {
-    width: 100%;
-  }
-}
-    </style>
+      .contact-form {
+        width: 100%;
+      }
+    }
+  </style>
 <body>
   <header>
     <nav>
@@ -301,213 +305,70 @@ blockquote footer {
           <img src="https://via.placeholder.com/400x300?text=Clinical+Psychology" alt="Clinical Psychology" data-aos="fade-right" class="about-image">
           <div class="about-text">
             <p data-aos="fade-right">I am deeply interested in how people think, feel, and behave. I appreciate the journey of self-discovery and helping people heighten their self-awareness to increase resilience towards life's challenges. I am experienced in working with children, adolescents, and adults; and I also enjoy working with families.</p>
-            <p data-aos="fade-right">I strive to provide a safe and comfortable space where people can identify challenges and find better ways of coping.</p>
           </div>
         </div>
-        <a href="#contact" class="btn" data-aos="zoom-in">Make Contact</a>
       </div>
     </section>
 
     <section id="expertise" data-aos="fade-up">
-      <h2>How I Can Help</h2>
+      <h2>Our Expertise</h2>
       <div class="expertise-grid">
-        <div class="expertise-item" data-aos="flip-left">Anxiety</div>
-        <div class="expertise-item" data-aos="flip-left">Depression</div>
-        <div class="expertise-item" data-aos="flip-left">Complex Grief</div>
-        <div class="expertise-item" data-aos="flip-left">Trauma</div>
-        <div class="expertise-item" data-aos="flip-left">Adjustment to Change</div>
-        <div class="expertise-item" data-aos="flip-left">Financial Stress</div>
-        <div class="expertise-item" data-aos="flip-left">Interpersonal Relationships</div>
-        <div class="expertise-item" data-aos="flip-left">Existential Crisis</div>
-        <div class="expertise-item" data-aos="flip-left">Adolescent Challenges</div>
-        <div class="expertise-item" data-aos="flip-left">Career Assessments</div>
-        <div class="expertise-item" data-aos="flip-left">Couples Counselling</div>
-      </div>
-    </section>
-
-    <section id="imago" data-aos="fade-up">
-      <h2>Imago for Couples</h2>
-      <div class="imago-content">
-        <img src="https://via.placeholder.com/500x300?text=Imago+Therapy" alt="Imago Therapy" data-aos="fade-left" class="imago-image">
-        <p data-aos="fade-right">I make use of Imago Therapy as a technique to assist couples to learn new and better ways of communicating. (Please note that I prefer the first session with a Couple to be two hours' long. Kindly make sure you request this when booking).</p>
-      </div>
-    </section>
-
-    <section id="approach" data-aos="fade-up">
-      <h2>Approach</h2>
-      <div class="approach-content">
-        <p data-aos="fade-right">I am 'solution focused' and practice a range of psychodynamic therapies, mindfulness approaches, and behavioral interventions. I also specialize in BWRT (Brain Working Recursive Therapy), which is an effective tool in treating a wide range of mental health conditions.</p>
-        <img src="https://via.placeholder.com/500x300?text=Therapeutic+Approach" alt="Therapeutic Approach" data-aos="fade-left" class="approach-image">
-      </div>
-    </section>
-
-    <section id="ketamine" data-aos="fade-up">
-      <h2>Ketamine Assisted Psychotherapy</h2>
-      <div class="ketamine-content">
-        <img src="https://via.placeholder.com/500x300?text=Ketamine+Therapy" alt="Ketamine Therapy" data-aos="fade-left" class="ketamine-image">
-        <div class="ketamine-text">
-          <p data-aos="fade-right">Ketamine-assisted psychotherapy (KAP) involves the use of prescribed doses of ketamine as an adjunct to psychotherapy. KAP has shown significant potential in treating mental disorders such as treatment-resistant depression (TRD), anxiety, obsessive–compulsive disorders (OCD), post-traumatic stress disorders (PTSD), and other conditions. It can also be used for those experiencing substance abuse and physical pain.</p>
-          <a href="#contact" class="btn" data-aos="zoom-in">Ask me to find out more</a>
+        <div class="expertise-item" data-aos="zoom-in">
+          <h3>Therapy</h3>
+          <p>We specialize in individual, couples, and family therapy for a wide range of psychological issues, from depression to trauma.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="online" data-aos="fade-up">
-      <h2>Online Therapy</h2>
-      <div class="online-content">
-        <p data-aos="fade-right">I also offer online consultations: Although face-to-face therapy is recommended as the preferred method, online therapy might suit some people more, especially those who feel anxious about starting therapy, or those who live far away from my practice. (For instance people living in other cities or abroad.) If this is preferred, I will send you a link so that we can consult over video link online.</p>
-        <img src="https://via.placeholder.com/500x300?text=Online+Therapy" alt="Online Therapy" data-aos="fade-left" class="online-image">
-      </div>
-    </section>
-
-    <section id="faq" data-aos="fade-up">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-accordion">
-        <div class="faq-item">
-          <h3 data-aos="fade-left">What is Therapy and Counselling?</h3>
-          <p data-aos="fade-right">It sounds too easy, but simply talking to someone within a confidential and safe space allows you the freedom to open up about your feelings, the challenges you are facing, and to express yourself openly and honestly. Empathic and sincere listening by an experienced therapist who is able to use their skills, training and knowledge to help you make sense of what you are going through, can provide you with a deeper sense of clarity and awareness. With a little effort, this can deepen and enhance your coping skills.</p>
+        <div class="expertise-item" data-aos="zoom-in">
+          <h3>Ketamine-Assisted Therapy</h3>
+          <p>Our innovative ketamine-assisted therapy offers new hope for patients dealing with treatment-resistant depression, anxiety, and PTSD.</p>
         </div>
-        <div class="faq-item">
-          <h3 data-aos="fade-left">Does therapy or counselling help?</h3>
-          <p data-aos="fade-right">These talking interventions and behavioural techniques are evidence-based and have been shown to be very effective in treating anxiety, depression, fear, addiction and a vast range of other emotional challenges. The insights and knowledge acquired can be used to make positive changes in the way we think, feel and behave, which can in turn improve our interpersonal relationships.</p>
-        </div>
-        <div class="faq-item">
-          <h3 data-aos="fade-left">How do I know if I need counselling?</h3>
-          <p data-aos="fade-right">In actual fact we would all benefit from counselling as it can be a very life-enriching experience. Questions you may want to ask yourself however are:</p>
-          <ul data-aos="fade-right">
-            <li>Do I find it difficult to stay focused?</li>
-            <li>Do I have difficulty sleeping through the night?</li>
-            <li>Do I sometimes look in the mirror and not like what I see?</li>
-            <li>Do I doubt myself at work or in my relationships?</li>
-            <li>Do I worry a lot about things I can't really control?</li>
-            <li>Do I drink alcohol or use drugs or medication to help me cope?</li>
-            <li>Do I find myself preoccupied with the future or the past?</li>
-            <li>Do I sometimes feel stressed and even overwhelmed about stuff?</li>
-            <li>Do I sometimes snap and lose my temper inappropriately?</li>
-            <li>Do I sometimes feel sad or want to cry for no particular reason?</li>
-            <li>Do I get into lots of arguments with people who are close to me?</li>
-            <li>Do I sometimes feel as if things are kind of meaningless?</li>
-          </ul>
-        </div>
-        <div class="faq-item">
-          <h3 data-aos="fade-left">How many sessions will I need?</h3>
-          <p data-aos="fade-right">This depends on the particular circumstances of each person. We will work together to help solve some of your challenges. We will do this in the most efficient way we can, and during the first session, we will co-create a therapeutic contract and agree on a certain number of preliminary sessions. Typically however, you can expect anything from three to six sessions, but it could be more or it might be less.</p>
-        </div>
-        <div class="faq-item">
-          <h3 data-aos="fade-left">How much does it cost?</h3>
-          <p data-aos="fade-right">Psychotherapy and counselling consultations are covered by most Medical Aid schemes (obviously depending on your particular policy). I am registered with most Medical Aids and if you have the appropriate cover, I am happy to claim on your behalf. Fees are charged according to tariffs recommended by the Board of Health Care Funders. If you would prefer to pay for the consultation yourself, I usually charge R1350 for a consultation, which is less than the standard Medical Aid rates. (I accept various payment methods including cash, credit and debit cards, EFT, Zapper and even PayPal). If you would like to claim from your Medical Aid however, I will provide you with a receipt for possible reimbursement. I will make every effort to ensure you are able to afford the care you need.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="book" data-aos="fade-up">
-      <h2>Book Now</h2>
-      <div class="booking-steps">
-        <ol data-aos="fade-right">
-          <li>Please click one of the Buttons below to choose your area.</li>
-          <li>This will open up another webpage called myGC.</li>
-          <li>Select a date and time that suits you, and click next step.</li>
-          <li>If this is your first time using myGC, you will need to 'Register' by entering your details and creating a password. A One Time Pin (OTP) will be sent to your phone to complete the registration.</li>
-          <li>Once logged in, you can complete your booking. You will receive a confirmation via email. (Please check your SPAM folder if you do not receive it).</li>
-          <li>If you are booking for the first time, you will receive an email with a link requesting you to fill in other personal details, such as your Medical Aid information. Doing this in advance saves time for our session. You will also be requested to sign my 'Terms and Conditions'.</li>
-        </ol>
-        <p data-aos="fade-right">Any problems? Please contact Shakayla (my Practice Manager) by phone to schedule a session. If she doesn't answer, please send her a WhatsApp message and she will get in touch. Her number is 081 444 6461.</p>
-        <div class="location-buttons" data-aos="fade-right">
-          <a href="#" class="btn">BLUFF</a>
-          <a href="#" class="btn">WESTVILLE</a>
+        <div class="expertise-item" data-aos="zoom-in">
+          <h3>Online Consultations</h3>
+          <p>We offer remote therapy options for clients who prefer online consultations or those unable to attend in person.</p>
         </div>
       </div>
     </section>
 
     <section id="contact" data-aos="fade-up">
       <h2>Contact</h2>
-      <div class="contact-info">
-        <p data-aos="fade-right">I run two practices:</p>
-        <div class="location" data-aos="fade-right">
-          <h3>Rooms on the Bluff</h3>
-          <p>Dr Khan's Medical Centre, 297 Lighthouse Road, Fynnlands</p>
-        </div>
-        <div class="location" data-aos="fade-right">
-          <h3>Rooms in Westville</h3>
-          <p>Private Residence, 2 Knoll Road, Grayleigh</p>
-        </div>
-        <p data-aos="fade-right">If you would like to schedule an appointment, please click the "Book Now" tab at the top of this page and then follow the prompts to choose the suburb, and the date and time. You should then receive an email to confirm the booking, and will also be requested to complete an Admissions Form. (Please check your Spam mail if you don't receive the confirmation email). You can also cancel or make changes to the booking by following the link on that confirmation email.</p>
-        <div class="contact-details" data-aos="fade-right">
-          <p>Practice Manager (Shakayla): 081 444 6461</p>
-          <p>Psychologist: 069 524 3665</p>
-        </div>
-        <form class="contact-form" data-aos="fade-right">
-          <h3>Directions & Enquiry</h3>
-          <input type="text" placeholder="Name" required>
-          <input type="tel" placeholder="Phone Number" required>
-          <input type="email" placeholder="Email" required>
-          <textarea placeholder="Comment or Message" required></textarea>
-          <button type="submit" class="btn">Submit</button>
-        </form>
-      </div>
+      <form class="contact-form" id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
     </section>
   </main>
 
   <footer>
     <div class="footer-links">
-      <a href="#">POPIA Manual</a>
-      <a href="#">PAIA Manual</a>
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#contact">Contact</a>
     </div>
-    <p>&copy; 2023 ABF Clinical Psychology. All Rights Reserved.</p>
+    <p>&copy; 2025 ABF Clinical Psychology. All rights reserved.</p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize AOS (Animate on Scroll)
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
-
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-in-out-back'
     });
-  });
 
-  // Form submission handler
-  const contactForm = document.querySelector('.contact-form');
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you for your message. We will get back to you soon!');
-    contactForm.reset();
-  });
+    // Form validation
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
 
-  // FAQ Accordion (basic implementation)
-  // const faqItems = document.querySelectorAll('.faq-item h3');
-  // faqItems.forEach(item => {
-  //   item.addEventListener('click', () => {
-  //     item.nextElementSibling.classList.toggle('active');
-  //   });
-  // });
-
-  // Expand FAQ accordion functionality
-  const faqItems = document.querySelectorAll('.faq-item h3');
-  faqItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const faqItem = item.parentElement;
-      faqItem.classList.toggle('active');
-      
-      // Close other open FAQ items
-      faqItems.forEach(otherItem => {
-        if (otherItem !== item) {
-          otherItem.parentElement.classList.remove('active');
-        }
-      });
+      if (!name || !email || !message) {
+        alert('Please fill in all fields.');
+        return;
+      }
+      alert('Message Sent! We will get back to you soon.');
+      this.reset();
     });
-  });
-});
-    
   </script>
 </body>
 </html>
