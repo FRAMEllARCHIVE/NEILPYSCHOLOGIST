@@ -114,8 +114,17 @@
     text-align: center;
   }
 
+.hero h1 {
+  font-size: 8vw; /* Adjust text size to be 90vw but within reason */
+  max-width: 90vw; /* Ensure it doesn't exceed the screen width */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+  
   .hero {
-    min-height: 100vh;
+   min-height: 85vh; /* Adjust height to bring text higher */
+  padding-top: 5rem; /* Reduce space at the top */
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     display: flex;
