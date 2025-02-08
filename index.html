@@ -374,10 +374,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    closeLocationModal.addEventListener("click", function () {
-        locationModal.style.display = "none";
-    });
-
     window.addEventListener("click", function (event) {
         if (event.target === locationModal) {
             locationModal.style.display = "none";
