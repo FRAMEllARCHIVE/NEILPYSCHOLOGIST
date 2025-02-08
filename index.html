@@ -323,10 +323,75 @@
     </div>
 </div>
 
+    
+<div id="locationModal" class="modal">
+    <div class="modal-content">
+        <button id="closeLocationModal" style="position:absolute; top:10px; right:10px; background:transparent; border:none; font-size:24px; cursor:pointer;">&times;</button>
+        
+        <div id="map-container" style="width: 250px; height: 250px; border-radius: 50%; overflow: hidden; margin: auto;">
+            <iframe id="mapFrame" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <p id="locationAddress" style="margin-top: 15px; font-size: 16px; color: black; font-weight: bold;"></p>
+
+        <a id="appointmentBtn" href="#" target="_blank" class="location-btn">MAKE APPOINTMENT</a>
+    </div>
+</div>
+
+    
 </body>
 
 <script>
 
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const locationModal = document.getElementById("locationModal");
+    const closeLocationModal = document.getElementById("closeLocationModal");
+    const mapFrame = document.getElementById("mapFrame");
+    const locationAddress = document.getElementById("locationAddress");
+    const appointmentBtn = document.getElementById("appointmentBtn");
+
+    // Function to open the location modal with dynamic data
+    function openLocationModal(mapURL, address, appointmentLink) {
+        mapFrame.src = mapURL;
+        locationAddress.innerText = address;
+        appointmentBtn.href = appointmentLink;
+        locationModal.style.display = "flex";
+    }
+
+    // Click event for "Westville"
+    document.querySelector(".location-btn[href*='WESTVILLE']").addEventListener("click", function (event) {
+        event.preventDefault();
+        openLocationModal(
+            "https://maps.google.com/maps?q=-29.825,-30.947&hl=es&z=14&output=embed",
+            "Westville, Durban, South Africa",
+            "https://psychologistneil.co.za/book-westville"
+        );
+    });
+
+    // Click event for "The Bluff"
+    document.querySelector(".location-btn[href*='THE BLUFF']").addEventListener("click", function (event) {
+        event.preventDefault();
+        openLocationModal(
+            "https://maps.google.com/maps?q=-29.945,-31.005&hl=es&z=14&output=embed",
+            "The Bluff, Durban, South Africa",
+            "https://psychologistneil.co.za/book-bluff"
+        );
+    });
+
+    // Close second modal
+    closeLocationModal.addEventListener("click", function () {
+        locationModal.style.display = "none";
+    });
+
+    // Close second modal when clicking outside
+    window.addEventListener("click", function (event) {
+        if (event.target === locationModal) {
+            locationModal.style.display = "none";
+        }
+    });
+});
+    
     
 document.addEventListener("DOMContentLoaded", function () {
     function adjustFontSize() {
