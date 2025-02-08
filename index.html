@@ -341,8 +341,7 @@
 
 <script>
 
-
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const locationModal = document.getElementById("locationModal");
     const closeLocationModal = document.getElementById("closeLocationModal");
     const mapFrame = document.getElementById("mapFrame");
@@ -357,24 +356,26 @@
         locationModal.style.display = "flex";
     }
 
-    // Click event for "Westville"
-    document.querySelector(".location-btn[href*='WESTVILLE']").addEventListener("click", function (event) {
-        event.preventDefault();
-        openLocationModal(
-            "https://maps.google.com/maps?q=-29.825,-30.947&hl=es&z=14&output=embed",
-            "Westville, Durban, South Africa",
-            "https://psychologistneil.co.za/book-westville"
-        );
-    });
+    // Select all buttons that should open the location modal
+    document.querySelectorAll(".open-location-modal").forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault();
+            const location = this.getAttribute("data-location");
 
-    // Click event for "The Bluff"
-    document.querySelector(".location-btn[href*='THE BLUFF']").addEventListener("click", function (event) {
-        event.preventDefault();
-        openLocationModal(
-            "https://maps.google.com/maps?q=-29.945,-31.005&hl=es&z=14&output=embed",
-            "The Bluff, Durban, South Africa",
-            "https://psychologistneil.co.za/book-bluff"
-        );
+            if (location === "westville") {
+                openLocationModal(
+                    "https://maps.google.com/maps?q=-29.825,-30.947&hl=es&z=14&output=embed",
+                    "Westville, Durban, South Africa",
+                    "https://psychologistneil.co.za/book-westville"
+                );
+            } else if (location === "bluff") {
+                openLocationModal(
+                    "https://maps.google.com/maps?q=-29.945,-31.005&hl=es&z=14&output=embed",
+                    "The Bluff, Durban, South Africa",
+                    "https://psychologistneil.co.za/book-bluff"
+                );
+            }
+        });
     });
 
     // Close second modal
@@ -389,7 +390,6 @@
         }
     });
 });
-    
     
 document.addEventListener("DOMContentLoaded", function () {
     function adjustFontSize() {
