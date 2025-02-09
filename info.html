@@ -384,7 +384,9 @@
             <button type="submit" class="location-btn">Submit</button>
         </form>
         <p id="formMessage"></p>
-    </div>
+    </
+
+      
 </section>
 
 </main>
@@ -394,48 +396,15 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+//animations
   AOS.init({
     duration: 1200,
     easing: 'ease-in-out-back'
   });
+//contact
 
-  function toggleMenu() {
-    const menu = document.querySelector('.menu');
-    menu.classList.toggle('active');
-  }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("contactForm");
-    const formMessage = document.getElementById("formMessage");
 
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
 
-        const combinedMessage = `
-            Name: ${document.getElementById("name").value}
-            Contact: ${document.getElementById("contactDetails").value}
-            Message: ${document.getElementById("message").value}
-        `;
-
-        const googleFormURL = "https://docs.google.com/forms/d/e/1FAIpQLSf0QBQMntTxJTXpoGuSEHUyw79XMXvFfsR9j-zOxIYYeJ1YtQ/formResponse";
-
-        const data = new FormData();
-        data.append("entry.1800120861", combinedMessage);
-
-        fetch(googleFormURL, {
-            method: "POST",
-            body: data,
-            mode: "no-cors"
-        })
-        .then(() => {
-            formMessage.innerText = "Thank you! Your message has been sent.";
-            formMessage.style.color = "green";
-            contactForm.reset();
-        })
-        .catch(() => {
-            formMessage.innerText = "Oops! Something went wrong. Please try again.";
-            formMessage.style.color = "red";
-        });
-    });
-  });
+  
 </script>
