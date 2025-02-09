@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
   
 </head>
-  <style>
+<style>
   :root {
     --primary-color: #3498db;
     --secondary-color: #2ecc71;
@@ -31,6 +31,15 @@
     background-color: var(--background-color);
   }
 
+  .cta a {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  }
+
+
+
   main {
     padding-top: 80px;
   }
@@ -42,9 +51,16 @@
     text-align: center;
   }
 
+.hero h1 {
+  font-size: 4vw;
+  max-width: 444px;
+  font-weight: bold;
+  margin-bottom: 11rem;
+}
+
   .hero {
-    min-height: 85vh;
-    padding-top: 5rem;
+   min-height: 85vh;
+  padding-top: 5rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     display: flex;
@@ -53,11 +69,9 @@
     text-align: center;
   }
 
-  .hero h1 {
-    font-size: 8vw;
-    max-width: 90vw;
-    font-weight: bold;
-    margin-bottom: 1rem;
+  .hero .content {
+    max-width: 800px;
+    text-align: center;
   }
 
   .btn {
@@ -110,59 +124,35 @@
     text-align: left;
   }
 
-  .location-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
 
-  #book .booking-steps ol {
-    text-align: left;
-    padding-left: 2rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
 
-  #book .booking-steps p {
-    margin-top: 1rem;
-  }
+.about-image {
+  max-width: 444px;
+  width: 80%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.about-text {
+  text-align: center;
+  margin-top: 2rem;
+}
 
-  .about-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-  }
-
-  .about-image {
-    max-width: 444px;
-    width: 80%;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .about-text {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  h1, h2 {
-    font-weight: bold;
-    margin-bottom: 11px;
-  }
-
-  h1 {
-    font-size: 2vw;
-    color: white;
-  }
-
-  h2 {
-    font-size: 1vw;
-    color: black;
-  }
-
+h2 {
+  font-size: 4vw;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 11px;
+  font-family: 'Montserrat', sans-serif;
+}
+  
   .imago-image, 
   .approach-image, 
   .ketamine-image, 
@@ -182,88 +172,87 @@
     gap: 2rem;
     margin-top: 1rem;
   }
-
-  .location-btn {
-    text-decoration: none;
-    background: #007BFF;
-    color: white;
-    padding: 12px;
-    border-radius: 22px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    cursor: pointer;
-    border: none;
+  
+ .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
     text-align: center;
-  }
+}
 
-  .location-btn:hover {
-    background: #0056b3;
-  }
-
-  .logo img {
+.logo img {
     width: 111px;
     height: auto;
     display: block;
-    margin: 20px 0;
-  }
+}
 
-  button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-    border-radius: 11px;
-    width: 100%;
-    font-size: 16px;
-    transition: 0.3s ease;
-    margin-top: 15px;
-    letter-spacing: 2px;
-    opacity: 0.7;
-  }
 
-  button:hover {
-    opacity: 0.9;
-  }
+button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 11px;
+            width: 100%;
+            font-size: 16px;
+            transition: 0.3s ease;
+            margin-top: 15px;            
+            letter-spacing: 2px;
+            opacity: 0.7;
+            font-family: 'Montserrat', sans-serif;
 
-  .form-container {
-    background: white;
-    padding: 30px;
-    border-radius: 22px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    text-align: center;
-    margin: auto;
-  }
+        }
 
-  .form-group {
-    margin-bottom: 15px;
-  }
+        button:hover {
+            opacity: 0.9;
+        }
 
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 8px;
-    border: 1px solid #ddd;
-    border-radius: 11px;
-    font-size: 16px;
-    background-color: #f9f9f9;
-    box-sizing: border-box;
-  }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+          font-family: 'Montserrat', sans-serif;
+          margin: auto;
+        }
 
-  .form-group input:focus {
-    outline: none;
-    border-color: #4CAF50;
-    background-color: #fff;
-  }
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-  h3 {
-    margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 33px;
-    letter-spacing: 2px;
-  }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ddd;
+            border-radius: 11px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-size: 33px;
+            letter-spacing: 2px;
+          font-family: 'Montserrat', sans-serif;
+
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            background-color: #fff;
+        }
+
+
+  
 </style>
 
 <body>
