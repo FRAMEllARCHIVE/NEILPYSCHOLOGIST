@@ -402,7 +402,28 @@
     easing: 'ease-in-out-back'
   });
 //contact
+        document.getElementById("customForm").addEventListener("submit", function(event) {
+            event.preventDefault();
 
+            let formData = new FormData();
+            let combinedMessage = `
+                Name: ${document.getElementById("name").value}
+                Phone & Email: ${document.getElementById("phoneEmail").value}
+                Message: ${document.getElementById("message").value}
+            `;
+            formData.append("entry.1800120861", combinedMessage);
+
+            fetch("https://docs.google.com/forms/d/e/1FAIpQLSe3BQEZ3NIJK1JHyZjkf_yG8CHBSJsOuuUcLEh9lZkPuOIZKg/formResponse", {
+                method: "POST",
+                body: formData,
+                mode: "no-cors"
+            }).then(() => {
+                alert("Form submitted successfully!");
+                document.getElementById("customForm").reset();
+            }).catch(() => {
+                alert("Error submitting form. Please try again.");
+            });
+        });
 
 
 
